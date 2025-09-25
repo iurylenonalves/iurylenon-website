@@ -1,18 +1,18 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 
 export function HeroSection() {
   return (
     <section className="bg-[#000037] text-white">
-      <div className="container mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-32">
-        
+      <SectionWrapper className="py-20 md:py-32">
         {/* Responsive grid: 1 column on mobile, 2 columns on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 md:gap-24 items-center">
           
           {/* Left Column: Text Content */}
           <div className="flex flex-col gap-6 text-center md:text-left">
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
+            <h1 className="font-heading text-4xl md:text-5xl  font-bold">
               Iury Lenon – <br /> Your Full Stack Solution
             </h1>
             <p className="text-lg text-slate-300 max-w-lg mx-auto md:mx-0">
@@ -49,13 +49,13 @@ export function HeroSection() {
               alt="Iury Lenon profile picture"
               width={500}
               height={500}
-              className="rounded-lg w-full max-w-sm md:max-w-md h-auto object-cover shadow-2xl"
+              className="rounded-lg w-full h-auto object-cover shadow-2xl"
               priority
             />
           </div>
 
-        </div>
-      </div>
+        </div>      
+      </SectionWrapper>
     </section>
   );
 }
