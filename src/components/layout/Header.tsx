@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import Image from 'next/image';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,8 +20,14 @@ export function Header() {
         
         {/* Column 1: Logo */}
         <div className="flex items-center justify-self-start">
-          <Link href="/" className="font-bold text-xl font-heading">
-            Logo
+          <Link href="/" aria-label="Back to Homepage">
+            <Image
+              src="/images/iury-lenon-logotype.png"
+              alt="Iury Lenon Logo"
+              width={64}
+              height={64}
+              className="transition-opacity hover:opacity-80"
+            />
           </Link>
         </div>
 
@@ -52,8 +59,9 @@ export function Header() {
           </DropdownMenu>
         </nav>
 
-        {/* Column 3: Action Buttons */}
-        <div className="flex items-center gap-2 justify-self-end border-2">
+        {/* Column 3: Action Buttons */}        
+        <div className="flex items-center gap-2 justify-self-end">
+
           <div className="hidden md:flex items-center gap-2">
             <Button variant="outline">Download</Button>
             <Button>Share</Button>
