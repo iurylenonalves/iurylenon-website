@@ -17,7 +17,7 @@ export function HeroSection() {
             </h1>
             <p className="text-lg text-slate-300 max-w-lg mx-auto md:mx-0">
               As a Full Stack Software Engineer, I specialize in crafting fast,
-              scalable, and modern web solutions. Let's connect businesses with
+              scalable, and modern web solutions. Let&apos;s connect businesses with
               their users through innovative technology.
             </p>
             

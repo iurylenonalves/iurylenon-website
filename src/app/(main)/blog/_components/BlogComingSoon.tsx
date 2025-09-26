@@ -23,7 +23,7 @@ import Link from "next/link";
                 New Content Coming Soon!
               </CardTitle>
               <CardDescription className="text-base">
-                I'm currently working on creating insightful articles about web development,
+                I&apos;m currently working on creating insightful articles about web development,
                 technology, and project case studies. Stay tuned!
               </CardDescription>
             </CardHeader>

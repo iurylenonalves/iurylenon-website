@@ -44,8 +44,12 @@ export function ContactFormSection() {
 
       toast.success('Message sent successfully!');
       form.reset();
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error('An unexpected error occurred. Please try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -59,7 +63,7 @@ export function ContactFormSection() {
         <div className="flex flex-col gap-6">
           <h2 className="font-heading text-3xl font-bold text-slate-800">Get in Touch</h2>
           <p className="text-lg text-slate-600">
-            I'm currently available for freelance opportunities and open to discussing new projects.
+            I&apos;m currently available for freelance opportunities and open to discussing new projects.
             Feel free to reach out directly or connect with me on social media.
           </p>
           <div className="flex flex-col gap-4 mt-4">
@@ -110,7 +114,7 @@ export function ContactFormSection() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Message</FormLabel>
-                    <FormControl><Textarea placeholder="Hi Iury, I'd like to talk about..." className="h-32" {...field} /></FormControl>
+                    <FormControl><Textarea placeholder="Hi Iury, I&apos;d like to talk about..." className="h-32" {...field} /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )}

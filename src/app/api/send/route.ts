@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const { name, email, message } = await request.json();
 
     
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: ['iuryalves.uk@gmail.com'],
       subject: `New Message from ${name} via Portfolio`,
@@ -25,7 +25,10 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
-  } catch (error) {
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return NextResponse.json({ error: err.message }, { status: 500 });
+    }
     return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
   }
 }

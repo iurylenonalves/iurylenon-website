@@ -10,7 +10,7 @@ export function CtaSection() {
         {/* Content container with center alignment */}
         <div className="text-center">
           <h2 className="font-heading text-4xl font-bold md:text-5xl">
-            Let's create something remarkable
+            Let&apos;s create something remarkable
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-800">
             Ready to transform your digital vision into a powerful, efficient web solution?
