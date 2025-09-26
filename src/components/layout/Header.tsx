@@ -50,11 +50,15 @@ export function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuItem asChild>
+                <Link href="/blog">Blog</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild></DropdownMenuItem>
+              {/* <DropdownMenuItem asChild>
                 <Link href="/blog/tech">Tech Articles</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/blog/projects">Project Case Studies</Link>
-              </DropdownMenuItem>
+              </DropdownMenuItem> */}
             </DropdownMenuContent>
           </DropdownMenu>
         </nav>
