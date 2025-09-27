@@ -29,7 +29,7 @@ const servicesData = [
   {
     title: "Secure API development",
     subtitle: "Custom API solutions ensuring data integrity, security, and seamless integration.",
-    imageUrl: "/images/secure-API-Development.jpg",
+    imageUrl: "/images/Secure-API-Development.jpg",
     details: [
       "Development of RESTful APIs with Node.js and Express/Nest.js.",
       "Implementation of JWT-based authentication and authorization.",
