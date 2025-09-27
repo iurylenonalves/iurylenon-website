@@ -18,7 +18,7 @@ const services = [
   {
     title: "Secure API development",
     description: "Custom API solutions ensuring data integrity, security, and seamless integration.",
-    imageUrl: "/images/secure-API-Development.jpg",
+    imageUrl: "/images/Secure-API-Development.jpg",
   },
   {
     title: "Performance consulting",
