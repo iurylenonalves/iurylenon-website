@@ -44,13 +44,13 @@ export function Header() {
           </Link>
           
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground focus:outline-none">
+            <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground focus:outline-none cursor-pointer">
               Blog
               <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuItem asChild>
-                <Link href="/blog">Blog</Link>
+                <Link href="/blog" className="cursor-pointer">Blog</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -60,8 +60,8 @@ export function Header() {
         <div className="flex items-center gap-2 justify-self-end">
 
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline">Download</Button>
-            <Button>Share</Button>
+            <Button variant="outline" className="cursor-pointer">Download</Button>
+            <Button className="cursor-pointer">Share</Button>
           </div>
         {/* Menu Mobile */}
         <MobileNav />
