@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import toast from 'react-hot-toast';
 import { Mail, Linkedin, Github, Loader2 } from 'lucide-react';
 import Link from 'next/link';
@@ -13,23 +12,17 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-
-// Schema de validação do formulário com Zod
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-});
+import { contactFormSchema, type ContactFormData } from '@/lib/validation';
 
 export function ContactFormSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: { name: "", email: "", message: "" },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: ContactFormData) {
     setIsSubmitting(true);
     try {
       const response = await fetch('/api/send', {
@@ -38,8 +31,24 @@ export function ContactFormSection() {
         body: JSON.stringify(values),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Something went wrong. Please try again.');
+        // Tratamento específico para rate limiting
+        if (response.status === 429) {
+          toast.error('Too many requests. Please wait a few minutes and try again.');
+          return;
+        }
+        
+        // Erros de validação
+        if (response.status === 400 && data.details) {
+          data.details.forEach((detail: { field: string; message: string }) => {
+            toast.error(`${detail.field}: ${detail.message}`);
+          });
+          return;
+        }
+        
+        throw new Error(data.error || 'Something went wrong. Please try again.');
       }
 
       toast.success('Message sent successfully!');
