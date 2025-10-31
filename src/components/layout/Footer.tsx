@@ -14,7 +14,7 @@ export function Footer() {
           {/* Logo */}
           <Link href="/" aria-label="Back to Homepage">
             <Image
-              src="/images/iury-lenon-logotype.png"
+              src="/images/iury-lenon-logotype2.png"
               alt="Iury Lenon Logo"
               width={128}
               height={128}

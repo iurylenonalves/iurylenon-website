@@ -14,7 +14,7 @@ export function FeatureSection() {
             {/* Left Column: Logo Image */}
           <div className="flex justify-center">            
             <Image
-              src="/images/iury-lenon-logo.png"
+              src="/images/iury-lenon-logo2.png"
               alt="Iury Lenon Logo"
               width={500}
               height={500}
