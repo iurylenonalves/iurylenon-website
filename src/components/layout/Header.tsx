@@ -1,16 +1,9 @@
 'use client';
 
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
 import Image from 'next/image';
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { MobileNav } from "./MobileNav"; 
 
 export function Header() {
@@ -42,18 +35,9 @@ export function Header() {
           <Link href="/services" className="text-muted-foreground transition-colors hover:text-foreground">
             Services
           </Link>
-          
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground focus:outline-none cursor-pointer">
-              Blog
-              <ChevronDown className="h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem asChild>
-                <Link href="/blog" className="cursor-pointer">Blog</Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
+            Blog
+          </Link>
         </nav>
 
         {/* Column 3: Action Buttons */}        
