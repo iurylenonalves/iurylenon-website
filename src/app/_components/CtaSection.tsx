@@ -9,11 +9,12 @@ export function CtaSection() {
         
         {/* Content container with center alignment */}
         <div className="text-center">
-          <h2 className="font-heading text-4xl font-bold md:text-5xl">
-            Let&apos;s create something remarkable
+          <h2 className="font-heading text-4xl font-bold md:text-5xl max-w-4xl mx-auto">
+            Stop losing time with manual tasks and slow websites
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-800">
-            Ready to transform your digital vision into a powerful, efficient web solution?
+            Let&apos;s build a digital infrastructure that works for you 24/7.
+            <br /> Book a discovery call today.
           </p>
 
             {/* Buttons Container */}
@@ -23,7 +24,7 @@ export function CtaSection() {
               size="lg"
               className="bg-[#000037] text-white font-bold hover:bg-[#00006F]"
             >
-              <Link href="/contact">Connect</Link>
+              <Link href="/contact">Book a Call</Link>
             </Button>
             <Button
               asChild
@@ -31,7 +32,7 @@ export function CtaSection() {
               variant="outline"
               className="border-[#000037] text-[#000037] font-bold hover:bg-[#000037] hover:text-white"
             >
-              <Link href="/contact#form">Discuss project</Link>
+              <Link href="/services">See Plans & Pricing</Link>
             </Button>
           </div>
         </div>

@@ -25,29 +25,29 @@ export function FeatureSection() {
           {/* Right Column: Text Content */}
           <div className="flex flex-col gap-6 text-center md:text-left">
             <span className="font-semibold uppercase tracking-wider text-[#000037]">
-              Engineer
+              YOUR STRATEGIC PARTNER
             </span>
             <h2 className="font-heading text-4xl font-bold text-slate-800 md:text-5xl">
-              Modern web solutions built with precision
+              Engineering that drives revenue and efficiency
             </h2>
             <p className="text-lg text-slate-600">
-              I develop scalable web applications using cutting-edge technologies.
-              My work combines technical expertise with strategic thinking.
+              I don&apos;t just write code; I build the digital foundation your business needs to grow.
+              From custom platforms to automated workflows, I deliver solutions that you own and control.
             </p>
 
             {/* Feature List with Icons */}
             <ul className="mt-4 flex flex-col gap-4">
               <li className="flex items-center gap-4 justify-center md:justify-start">
                 <Box className="h-6 w-6 text-[#000037]" />
-                <span className="text-slate-700">React and Next.js for dynamic interfaces</span>
+                <span className="text-slate-700">High-Performance Web Platforms (Next.js) designed for SEO dominance and maximum conversion</span>
               </li>
               <li className="flex items-center gap-4 justify-center md:justify-start">
                 <Box className="h-6 w-6 text-[#000037]" />
-                <span className="text-slate-700">Node.js and Express for robust backends</span>
+                <span className="text-slate-700">Private Cloud Infrastructure (VPS) to ensure data privacy and cut recurring SaaS fees</span>
               </li>
               <li className="flex items-center gap-4 justify-center md:justify-start">
                 <Box className="h-6 w-6 text-[#000037]" />
-                <span className="text-slate-700">Performance optimization and SEO strategies</span>
+                <span className="text-slate-700">AI & Workflow Automation (n8n) to scale your operations without increasing headcount.</span>
               </li>
             </ul>
 

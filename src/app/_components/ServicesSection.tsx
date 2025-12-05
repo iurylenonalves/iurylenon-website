@@ -6,24 +6,24 @@ import { SectionWrapper } from "@/components/layout/SectionWrapper";
 
 const services = [
   {
-    title: "SEO-optimized landing pages",
-    description: "High-performance landing pages designed to convert and rank effectively in search engines.",
+    title: "High-Performance Landing Pages",
+    description: "Custom-coded sites designed to rank #1 on Google and convert visitors into customers. No slow builders like Wix/Wordpress.",
     imageUrl: "/images/seo-optimized.png",
   },
   {
-    title: "Scalable SaaS MVPs",
-    description: "Rapid development of minimum viable products with robust architecture and growth potential.",
+    title: "Custom SaaS & Web Systems",
+    description: "From idea to market. Robust web applications with secure login, payments, and dashboards for startups.",
     imageUrl: "/images/Scalable-SaaS-MVPs.png",
   },
   {
-    title: "Secure API development",
-    description: "Custom API solutions ensuring data integrity, security, and seamless integration.",
-    imageUrl: "/images/Secure-API-Development.jpg",
+    title: "Business Process Automation",
+    description: "Connect your apps (CRM, Email, Slack). Automate repetitive tasks using n8n and AI, saving 20+ hours per week.",
+    imageUrl: "/images/business_process_automation.png",
   },
   {
-    title: "Performance consulting",
-    description: "Strategic insights to optimize web applications, improve loading times, and enhance user experience.",
-    imageUrl: "/images/Performance-consulting.jpg",
+    title: "Managed Infrastructure & Support",
+    description: "Your own private server (VPS). We manage security, backups, and updates so you can focus on your business.",
+    imageUrl: "/images/managed-infrastructure-support.png",
   },
 ];
 
@@ -38,10 +38,10 @@ export function ServicesSection() {
             Services
           </span>
           <h2 className="font-heading text-4xl font-bold md:text-5xl mt-4 max-w-3xl mx-auto">
-            Comprehensive web development solutions
+            Web Platforms, Automation & Infrastructure
           </h2>
           <p className="text-lg text-slate-300 mt-6 max-w-2xl mx-auto">
-            I provide tailored digital solutions that drive business growth and user engagement.
+            I provide tailored digital solutions that drive business growth, reduce operational costs, and improve efficiency.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export function ServicesSection() {
             size="lg"
             className="bg-[#FFD700] text-[#000037] font-bold hover:bg-[#CCAC00]"
           >
-            <Link href="/services">Learn more</Link>
+            <Link href="/services">View Plans & Pricing</Link>
           </Button>
           <Button asChild variant="ghost" className="group text-white font-bold">
             <Link href="/contact">
