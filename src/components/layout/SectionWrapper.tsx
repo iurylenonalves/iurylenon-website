@@ -1,6 +1,5 @@
-import { cn } from "@/lib/utils"; // Importa a função utilitária do shadcn
+import { cn } from "@/lib/utils"; 
 
-// Definimos as propriedades que o nosso Wrapper pode receber
 interface SectionWrapperProps {
   children: React.ReactNode;
   className?: string;
@@ -8,9 +7,9 @@ interface SectionWrapperProps {
 
 export function SectionWrapper({ children, className }: SectionWrapperProps) {
   return (
-    // A classe `container` garante a largura máxima e centralização.
-    // As classes `px-*` garantem o espaçamento lateral consistente.
-    // `cn` junta as classes padrão com qualquer classe extra que passarmos (como o padding vertical).
+    // The `container` class ensures maximum width and centering.
+    // The `px-*` classes ensure consistent lateral spacing.
+    // `cn` combines the default classes with any extra classes we pass (like vertical padding).
     <div className={cn("container mx-auto px-6 md:px-8 lg:px-12", className)}>
       {children}
     </div>

@@ -3,28 +3,28 @@ import { SectionWrapper } from "@/components/layout/SectionWrapper";
 // Data structure for skill categories and their respective skills
 const skillCategories = [
   {
-    title: "Frontend Core",
-    skills: ["React", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS"],
+    title: "Web Platforms Core",
+    skills: ["React", "Next.js 15", "TypeScript", "Tailwind CSS", "Sanity CMS", "SEO Technical"],
+  },
+  {
+    title: "Automation & AI",
+    skills: ["n8n", "LLMs (OpenAI, DeepSeek, Claude)", "AI Agents & RAG", "Typebot", "Webhook Integrations", "Business Logic"],
+  },
+  {
+    title: "Cloud & Infrastructure",
+    skills: ["Docker", "VPS (Hetzner/DigitalOcean)", "AWS (S3/EC2)", "Google Cloud Platform", "Vercel", "Linux Security"],
   },
   {
     title: "Backend & API",
-    skills: ["Node.js", "Express.js", "Nest.js", "REST APIs", "API Security"],
+    skills: ["Node.js", "Express.js", "REST APIs", "PostgreSQL", "Prisma ORM", "API Security"],
   },
   {
-    title: "Databases",
-    skills: ["PostgreSQL", "Prisma ORM"],
+    title: "DevOps & Quality",
+    skills: ["Git", "GitHub Actions (CI/CD)", "Automated Testing", "Performance Audit"],
   },
   {
-    title: "Authentication & Content",
-    skills: ["Google OAuth", "NextAuth.js", "JWT", "Multer (File Uploads)", "Sharp (Image Processing)"],
-  },
-  {
-    title: "DevOps & Testing",
-    skills: ["Git", "GitHub Actions (CI/CD)", "Jest", "Automated Testing"],
-  },
-  {
-    title: "UI & Design Tools",
-    skills: ["Figma", "Framer Motion", "Mobile-first UI", "Responsive Design", "SEO"],
+    title: "Tools & Design",
+    skills: ["Figma", "Mobile-first UI", "Responsive Design", "Accessibility (a11y)"],
   },
 ];
 
@@ -33,10 +33,10 @@ export function SkillsGrid() {
     <section className="bg-[#000037]">
       <SectionWrapper className="py-20 md:py-28 text-center">
         <h2 className="font-heading text-4xl font-bold text-white">
-          My Tech Stack
+          Enterprise-Grade Technology Stack
         </h2>
         <p className="mt-4 text-lg text-white">
-          A collection of the primary tools and technologies I use to bring ideas to life.
+          I use a modern, robust toolkit designed for scalability, security, and long-term maintainability.
         </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
