@@ -4,10 +4,8 @@ import { rateLimit } from '@/lib/rate-limit';
 import { contactFormSchema, sanitizeContactForm } from '@/lib/validation';
 import { ZodError } from 'zod';
 
-// Inicializa o Resend com a chave de API
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Função para obter IP do cliente
 function getClientIp(request: NextRequest): string {
   const forwarded = request.headers.get('x-forwarded-for');
   const realIp = request.headers.get('x-real-ip');
@@ -25,7 +23,7 @@ function getClientIp(request: NextRequest): string {
 
 export async function POST(request: NextRequest) {
   try {
-    // 1. Rate Limiting - 5 requisições a cada 15 minutos por IP
+    // Rate Limiting - 5 requests every 15 minutes per IP
     const clientIp = getClientIp(request);
     const rateLimitResult = rateLimit(clientIp, 5, 15 * 60 * 1000);
     
@@ -48,29 +46,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 2. Parse e validar JSON
+    // Parse and validate JSON
     const body = await request.json();
 
-    // 3. Validação com Zod
+    // Validation with Zod
     const validatedData = contactFormSchema.parse(body);
 
-    // 4. Sanitização dos dados
+    // Data sanitization
     const sanitizedData = sanitizeContactForm(validatedData);
 
-    // 5. Enviar email
+    // Send email
     const { error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: ['iuryalves.uk@gmail.com'],
-      subject: `New Message from ${sanitizedData.name} via Portfolio`,
+      subject: `New Lead: ${sanitizedData.name} - ${sanitizedData.service.toUpperCase()}`,
       replyTo: sanitizedData.email,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${sanitizedData.name}</p>
         <p><strong>Email:</strong> ${sanitizedData.email}</p>
+        <p><strong>Interested in:</strong> ${sanitizedData.service}</p>
+        <hr>
         <p><strong>Message:</strong></p>
         <p>${sanitizedData.message.replace(/\n/g, '<br>')}</p>
         <hr>
-        <p><small>Sent from: ${clientIp}</small></p>
+        <p><small>Sent from IP: ${clientIp}</small></p>
       `,
     });
 
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (err: unknown) {
-    // Tratamento de erros de validação
+    // Validation error handling
     if (err instanceof ZodError) {
       return NextResponse.json(
         { 
@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Erro de parsing JSON
+    // JSON parsing error
     if (err instanceof SyntaxError) {
       return NextResponse.json(
         { error: 'Invalid JSON format.' },
@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Outros erros
+    // Other errors
     console.error('Unexpected error:', err);
     return NextResponse.json(
       { error: 'An unexpected error occurred. Please try again later.' },
@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Bloquear outros métodos HTTP
+// Block other HTTP methods
 export async function GET() {
   return NextResponse.json(
     { error: 'Method not allowed' },

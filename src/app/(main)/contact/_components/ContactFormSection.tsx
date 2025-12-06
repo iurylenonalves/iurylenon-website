@@ -12,6 +12,13 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { 
+  Select, 
+  SelectContent, 
+  SelectItem, 
+  SelectTrigger, 
+  SelectValue 
+} from "@/components/ui/select";
 import { contactFormSchema, type ContactFormData } from '@/lib/validation';
 
 export function ContactFormSection() {
@@ -34,13 +41,13 @@ export function ContactFormSection() {
       const data = await response.json();
 
       if (!response.ok) {
-        // Tratamento específico para rate limiting
+        // Specific handling for rate limiting
         if (response.status === 429) {
           toast.error('Too many requests. Please wait a few minutes and try again.');
           return;
         }
         
-        // Erros de validação
+        // Validation errors from backend
         if (response.status === 400 && data.details) {
           data.details.forEach((detail: { field: string; message: string }) => {
             toast.error(`${detail.field}: ${detail.message}`);
@@ -68,7 +75,7 @@ export function ContactFormSection() {
     <SectionWrapper className="py-20 md:py-28">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
         
-        {/* Coluna da Esquerda: Informações de Contato */}
+        {/* Left Column: Contact Information */}
         <div className="flex flex-col gap-6">
           <h2 className="font-heading text-3xl font-bold text-slate-800">Get in Touch</h2>
           <p className="text-lg text-slate-600">
@@ -91,7 +98,7 @@ export function ContactFormSection() {
           </div>
         </div>
 
-        {/* Coluna da Direita: Formulário */}
+        {/* Right Column: Form */}
         <div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -119,17 +126,47 @@ export function ContactFormSection() {
               />
               <FormField
                 control={form.control}
+                name="service"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>What are you looking for?</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a service" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="landing-page">High-Performance Landing Page</SelectItem>
+                        <SelectItem value="saas-system">Custom SaaS / Web System</SelectItem>
+                        <SelectItem value="automation">Business Automation (n8n)</SelectItem>
+                        <SelectItem value="infrastructure">Managed Infrastructure (VPS)</SelectItem>
+                        <SelectItem value="audit">Technical Audit</SelectItem>
+                        <SelectItem value="other">Other Inquiry</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
                 name="message"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Message</FormLabel>
-                    <FormControl><Textarea placeholder="Hi Iury, I&apos;d like to talk about..." className="h-32" {...field} /></FormControl>
+                    <FormControl>
+                      <Textarea 
+                        placeholder="Tell me about your project goals, timeline, or current challenges..." 
+                        className="h-32" {...field} 
+                      />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
               <Button type="submit" disabled={isSubmitting} className="bg-[#FFD700] text-[#000037] font-bold hover:bg-[#CCAC00] cursor-pointer w-full">
-                {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : "Send Message"}
+                {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : "Book Strategy Call"}
               </Button>
             </form>
           </Form>

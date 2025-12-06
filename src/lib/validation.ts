@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-// Schema compartilhado entre frontend e backend
+// Schema shared between frontend and backend
 export const contactFormSchema = z.object({
   name: z
     .string()
@@ -12,6 +12,17 @@ export const contactFormSchema = z.object({
     .string()
     .email({ message: "Please enter a valid email address." })
     .max(255, { message: "Email is too long." }),
+
+  service: z.enum([
+    "landing-page", 
+    "saas-system", 
+    "automation", 
+    "infrastructure", 
+    "audit",
+    "other"
+  ], {
+    message: "Please select a valid service option."
+  }),
   
   message: z
     .string()
@@ -21,7 +32,7 @@ export const contactFormSchema = z.object({
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
-// Função para sanitizar HTML e prevenir XSS
+// Function to sanitize HTML and prevent XSS
 export function sanitizeInput(input: string): string {
   return input
     .replace(/[<>]/g, '') // Remove < e >
@@ -30,11 +41,12 @@ export function sanitizeInput(input: string): string {
     .trim();
 }
 
-// Sanitizar todos os campos do formulário
+// Sanitize all form fields
 export function sanitizeContactForm(data: ContactFormData): ContactFormData {
   return {
     name: sanitizeInput(data.name),
     email: sanitizeInput(data.email),
+    service: data.service,
     message: sanitizeInput(data.message),
   };
 }
