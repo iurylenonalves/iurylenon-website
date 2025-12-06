@@ -37,25 +37,39 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
       <CardHeader>
         <CardTitle className="font-heading text-2xl">{project.title}</CardTitle>
-        <CardDescription>{project.description}</CardDescription>
+        <CardDescription className="h-24 overflow-y-auto text-sm leading-relaxed">
+          {project.description}
+        </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <span key={tag} className="bg-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+            <span key={tag} className="bg-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-200">
               {tag}
             </span>
           ))}
         </div>
       </CardContent>
-      <CardFooter className="flex items-center gap-4">
-        {project.liveUrl && (
+      <CardFooter className="mt-auto pt-4 flex items-center gap-4">
+        {project.liveUrl ? (
           <Button asChild>
-            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            <Link 
+              href={project.liveUrl} 
+              target={project.liveUrl.startsWith("/") ? "_self" : "_blank"}
+              rel={project.liveUrl.startsWith("/") ? undefined : "noopener noreferrer"}
+            >
               <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
+              {project.liveUrl === '/contact' ? 'See it in action' : 'Live Project'}
             </Link>
           </Button>
+        ) : (
+            <Button 
+              disabled 
+              variant="outline" 
+              className="w-full opacity-50 cursor-not-allowed"
+            >
+              In Progress
+            </Button>
         )}
         {project.githubUrl && (
           <Button asChild variant="secondary">
