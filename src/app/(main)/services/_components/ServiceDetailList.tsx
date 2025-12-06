@@ -2,50 +2,49 @@ import Image from "next/image";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { CheckCircle2 } from "lucide-react";
 
-// Dados detalhados para cada serviço
 const servicesData = [
   {
-    title: "SEO-optimized landing pages",
-    subtitle: "High-performance landing pages designed to convert and rank effectively in search engines.",
-    imageUrl: "/images/seo-optimized.png", // A mesma imagem da homepage
+    title: "High-Performance Landing Pages",
+    subtitle: "Custom-coded platforms designed to rank #1 on Google and convert visitors into revenue. No slow builders like Wix or Wordpress.",
+    imageUrl: "/images/seo-optimized.png", 
     details: [
-      "Deep keyword and competitor analysis.",
-      "Implementation of on-page and technical SEO best practices.",
-      "Focus on Core Web Vitals to achieve high PageSpeed scores.",
-      "Responsive, mobile-first design for all devices.",
+      "Built with Next.js for instant loading speeds (100/100 Lighthouse).",
+      "Technical SEO architecture ensuring maximum visibility.",
+      "Integration with CRMs (HubSpot, Pipedrive) and marketing tools.",
+      "Mobile-first design optimized for conversion.",
     ],
   },
   {
-    title: "Scalable SaaS MVPs",
-    subtitle: "Rapid development of minimum viable products with robust architecture and growth potential.",
+    title: "Custom SaaS & Web Systems",
+    subtitle: "Turn your startup idea into a robust product. Secure, scalable web applications built for growth.",
     imageUrl: "/images/Scalable-SaaS-MVPs.png",
     details: [
-      "Architecture design for scalability and maintainability.",
-      "Secure user authentication and data management.",
-      "Integration with third-party APIs and payment gateways.",
-      "Agile development process for fast iteration and feedback.",
+      "Secure user authentication and role-based access control.",
+      "Subscription and payment integration (Stripe/Lemon Squeezy).",
+      "Real-time dashboards and data visualization.",
+      "Scalable database architecture (PostgreSQL).",
     ],
   },
   {
-    title: "Secure API development",
-    subtitle: "Custom API solutions ensuring data integrity, security, and seamless integration.",
-    imageUrl: "/images/Secure-API-Development.jpg",
+    title: "Business Process Automation",
+    subtitle: "Stop wasting time on manual tasks. We connect your apps and automate workflows using AI and n8n.",
+    imageUrl: "/images/business_process_automation.png",
     details: [
-      "Development of RESTful APIs with Node.js and Express/Nest.js.",
-      "Implementation of JWT-based authentication and authorization.",
-      "Comprehensive data validation and error handling.",
-      "Clear API documentation for easy integration.",
+      "Automate repetitive tasks (Data Entry, Invoicing, Emails).",
+      "Connect disparate apps (e.g., Typeform → OpenAI → Slack).",
+      "Intelligent workflows powered by AI agents.",
+      "Reduction of human error and operational costs.",
     ],
   },
   {
-    title: "Performance consulting",
-    subtitle: "Strategic insights to optimize web applications, improve loading times, and enhance user experience.",
-    imageUrl: "/images/Performance-consulting.jpg",
+    title: "Managed Infrastructure & Support",
+    subtitle: "Your own Private Cloud. We host, secure, and maintain your infrastructure so you can focus on your business.",
+    imageUrl: "/images/managed-infrastructure-support.png",
     details: [
-      "In-depth performance audit using Lighthouse and other tools.",
-      "Code splitting, image optimization, and caching strategies.",
-      "Database query optimization and backend performance tuning.",
-      "Actionable reports with clear steps for improvement.",
+      "Setup of Private VPS in the UK/Europe (GDPR Compliant).",
+      "Massive cost reduction compared to SaaS tools (Zapier/Make).",
+      "24/7 Uptime monitoring and automated backups.",
+      "Monthly security updates and maintenance.",
     ],
   },
 ];
@@ -59,7 +58,7 @@ export function ServiceDetailList() {
             key={service.title}
             className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center"
           >
-            {/* Imagem */}
+            {/* Image */}
             <div className={`relative aspect-video md:aspect-[4/3] overflow-hidden rounded-lg ${index % 2 !== 0 ? 'md:order-last' : ''}`}>
               <Image
                 src={service.imageUrl}
@@ -70,7 +69,7 @@ export function ServiceDetailList() {
               />
             </div>
 
-            {/* Conteúdo */}
+            {/* Content */}
             <div className="flex flex-col gap-4">
               <h2 className="font-heading text-3xl font-bold text-slate-800">
                 {service.title}
@@ -79,7 +78,7 @@ export function ServiceDetailList() {
               <ul className="mt-4 flex flex-col gap-3">
                 {service.details.map((detail) => (
                   <li key={detail} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0" />
+                    <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                     <span className="text-slate-700">{detail}</span>
                   </li>
                 ))}
