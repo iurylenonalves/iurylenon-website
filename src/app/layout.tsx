@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://iurylenon-website.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://iurylenon.com'),
   title: {
     default: "Iury Lenon | Web Performance & Business Automation",
     template: "%s | Iury Lenon"
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     alternateLocale: ["pt_BR"],
-    url: process.env.NEXT_PUBLIC_APP_URL || "https://iurylenon-website.vercel.app",
+    url: process.env.NEXT_PUBLIC_APP_URL || "https://iurylenon.com",
     siteName: "Iury Lenon",
     title: "Iury Lenon | Digital Infrastructure & Automation",
     description: "Transform your business operations with High-Performance Web Systems and AI Process Automation. Secure, scalable, and independent infrastructure.",

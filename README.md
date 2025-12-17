@@ -94,7 +94,7 @@ iurylenon-website/
    Create a `.env.local` file in the root directory (use `.env.example` as reference):
    ```env
    RESEND_API_KEY=your_resend_api_key_here
-   NEXT_PUBLIC_APP_URL=https://iurylenon-website.vercel.app
+   NEXT_PUBLIC_APP_URL=https://iurylenon.com
    ```
    
    > **Note**: `NEXT_PUBLIC_APP_URL` é opcional. Se não definida, o app usará o domínio da Vercel automaticamente. Quando você tiver um domínio customizado, atualize este valor.
@@ -164,7 +164,7 @@ npm start
 | Variable | Description | Required | Default |
 |----------|-------------|----------|---------|
 | `RESEND_API_KEY` | API key from Resend for email functionality | Yes | - |
-| `NEXT_PUBLIC_APP_URL` | Public URL of your website (for metadata and SEO) | No | `https://iurylenon-website.vercel.app` |
+| `NEXT_PUBLIC_APP_URL` | Public URL of your website (for metadata and SEO) | No | `https://iurylenon.com` |
 
 > **Tip**: Quando você configurar um domínio customizado na Vercel, adicione a variável `NEXT_PUBLIC_APP_URL` com seu novo domínio nas configurações do projeto.
 
