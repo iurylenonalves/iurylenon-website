@@ -19,33 +19,43 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://iurylenon-website.vercel.app'),
   title: {
-    default: "Iury Lenon | Full Stack Software Engineer",
+    default: "Iury Lenon | Web Performance & Business Automation",
     template: "%s | Iury Lenon"
   },
-  description: "Portfolio of Iury Lenon, a Full Stack developer specialized in building modern, fast, and scalable web applications with React, Next.js, and Node.js.",
-  keywords: ["Full Stack Developer", "React Developer", "Next.js", "TypeScript", "Node.js", "Web Development", "Software Engineer"],
+  description: "Independent Tech Partner helping businesses in the UK and Europe reduce costs and scale through Custom Web Platforms, Private Cloud Infrastructure, and AI Automation.",
+  keywords: [
+    "Business Automation", 
+    "Web Performance Optimization", 
+    "Private Cloud Solutions", 
+    "Next.js Expert", 
+    "n8n Automation", 
+    "Custom SaaS Development", 
+    "Digital Infrastructure", 
+    "Tech Consultant London"
+  ],
   authors: [{ name: "Iury Lenon" }],
   creator: "Iury Lenon",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_GB",
+    alternateLocale: ["pt_BR"],
     url: process.env.NEXT_PUBLIC_APP_URL || "https://iurylenon-website.vercel.app",
-    siteName: "Iury Lenon Portfolio",
-    title: "Iury Lenon | Full Stack Software Engineer",
-    description: "Portfolio of Iury Lenon, Full Stack developer specialized in React, Next.js, and Node.js",
+    siteName: "Iury Lenon",
+    title: "Iury Lenon | Digital Infrastructure & Automation",
+    description: "Transform your business operations with High-Performance Web Systems and AI Process Automation. Secure, scalable, and independent infrastructure.",
     images: [
       {
         url: "/images/iury-lenon-full-stack-software-engineer.webp",
         width: 1200,
         height: 630,
-        alt: "Iury Lenon - Full Stack Software Engineer",
+        alt: "Iury Lenon - Tech Partner & Automation Expert",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Iury Lenon | Full Stack Software Engineer",
-    description: "Portfolio of Iury Lenon, Full Stack developer specialized in React, Next.js, and Node.js",
+    title: "Iury Lenon | Web Performance & Automation",
+    description: "Helping businesses reduce costs and scale through Custom Web Platforms, Private Cloud Infrastructure, and AI Automation.",
     images: ["/images/iury-lenon-full-stack-software-engineer.webp"],
   },
   robots: {
