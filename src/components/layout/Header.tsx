@@ -38,14 +38,20 @@ export function Header() {
           <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
             Blog
           </Link>
+          <Link href="/contact" className="text-muted-foreground transition-colors hover:text-primary">
+            Contact
+          </Link>
         </nav>
 
         {/* Column 3: Action Buttons */}        
         <div className="flex items-center gap-2 justify-self-end">
 
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline" className="cursor-pointer">Download</Button>
-            <Button className="cursor-pointer">Share</Button>
+            <Button asChild className="cursor-pointer font-semibold shadow-sm">
+                <Link href="/contact">
+                    Book a Call
+                </Link>
+            </Button>
           </div>
         {/* Menu Mobile */}
         <MobileNav />

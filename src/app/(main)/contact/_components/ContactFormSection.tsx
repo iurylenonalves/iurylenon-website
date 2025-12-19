@@ -85,7 +85,7 @@ export function ContactFormSection() {
           <div className="flex flex-col gap-4 mt-4">
             <a href="mailto:iurylenon@gmail.com" className="flex items-center gap-3 text-lg font-medium text-slate-700 hover:text-[#000037]">
               <Mail className="h-6 w-6" />
-              iurylenon@gmail.com
+              contact@iurylenon.com
             </a>
             <div className="flex items-center gap-4">
               <Link href="https://linkedin.com/in/iurylenon/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

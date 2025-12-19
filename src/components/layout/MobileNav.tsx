@@ -45,6 +45,9 @@ export function MobileNav() {
             <Link href="/blog" onClick={() => setIsOpen(false)} className="text-muted-foreground transition-colors hover:text-foreground">
               Blog
             </Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="text-muted-foreground transition-colors hover:text-primary">
+              Contact
+            </Link>
           </div>
           {/* Action buttons also inside the menu */}
           <div className="mt-auto flex flex-col gap-3">
