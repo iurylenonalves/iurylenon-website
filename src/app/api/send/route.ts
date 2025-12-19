@@ -57,20 +57,24 @@ export async function POST(request: NextRequest) {
 
     // Send email
     const { error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: ['iuryalves.uk@gmail.com'],
+      from: 'Iury Lenon Tech Solutions <contact@iurylenon.com>',
+      to: ['contact@iurylenon.com'],
       subject: `New Lead: ${sanitizedData.name} - ${sanitizedData.service.toUpperCase()}`,
       replyTo: sanitizedData.email,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${sanitizedData.name}</p>
-        <p><strong>Email:</strong> ${sanitizedData.email}</p>
-        <p><strong>Interested in:</strong> ${sanitizedData.service}</p>
-        <hr>
-        <p><strong>Message:</strong></p>
-        <p>${sanitizedData.message.replace(/\n/g, '<br>')}</p>
-        <hr>
-        <p><small>Sent from IP: ${clientIp}</small></p>
+        <div style="font-family: sans-serif; font-size: 16px; color: #333;">
+          <h2 style="color: #000;">🚀 New Business Inquiry</h2>
+          <p><strong>Name:</strong> ${sanitizedData.name}</p>
+          <p><strong>Email:</strong> <a href="mailto:${sanitizedData.email}">${sanitizedData.email}</a></p>
+          <p><strong>Interested in:</strong> ${sanitizedData.service}</p>
+          <hr style="border: 1px solid #eee; margin: 20px 0;">
+          <p><strong>Message:</strong></p>
+          <div style="background: #f9f9f9; padding: 15px; border-radius: 5px;">
+            ${sanitizedData.message.replace(/\n/g, '<br>')}
+          </div>
+          <hr style="border: 1px solid #eee; margin: 20px 0;">
+          <p style="color: #666; font-size: 12px;">Security: Sent from IP ${clientIp}</p>
+        </div>
       `,
     });
 
