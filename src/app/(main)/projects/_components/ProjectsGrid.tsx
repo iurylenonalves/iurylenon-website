@@ -3,20 +3,28 @@ import { ProjectCard, Project } from "./ProjectCard";
 
 const projectsData: Project[] = [
   {
+    title: "High-End Aesthetic Clinic Platform",
+    description: "A full-scale digital infrastructure for a premium clinic. Features a Headless CMS (Sanity) for real-time content management, a hybrid E-commerce system for selling products & treatments, and sub-second performance.",
+    imageUrl: "/images/tuanybarreirosbioestetica.png",
+    tags: ["Next.js 16", "Sanity CMS", "E-commerce", "Stripe/MercadoPago", "SEO First"],
+    liveUrl: "https://www.tuanybarreiros.com.br",
+    //githubUrl: "https://github.com/iurylenonalves/tuany-bioestetica",
+  },
+  {
     title: "Bruna Alves Photography Platform",
-    description: "A complete digital transformation for a photography business. Includes a high-conversion landing page (100 SEO Score), secure client galleries, and a custom CMS for content management.",
-    imageUrl: "/images/home-brunaphoto.png", // CHANGE TO NEW IMAGE
-    tags: ["Next.js", "SEO Optimized", "PostgreSQL", "CMS Integration", "Stripe Ready"],
+    description: "Digital transformation for a photography business. Moved from a generic portfolio to a high-conversion platform with secure client galleries, SEO optimization (Rank #1 local), and automated booking flows.",
+    imageUrl: "/images/home-brunaphoto.png",
+    tags: ["Next.js", "PostgreSQL", "Tailwind CSS", "Digital Transformation"],
     liveUrl: "https://brunaalvesphoto.com",
     githubUrl: "https://github.com/iurylenonalves/brunaalvesphoto-frontend",
   },
   {
-    title: "Animated Small Business Website",
-    description: "An intelligent CRM infrastructure. It captures leads from the website, validates data, enriches profiles using AI, and notifies the sales team instantly via Slack/WhatsApp.",
-    imageUrl: "/images/Project-02.jpg", // CHANGE TO NEW IMAGE
-    tags: ["n8n", "Resend API", "Zod Validation", "Slack API", "Webhook Automation"],
-    liveUrl: "/contact", // /contact page
-    //githubUrl: "#", 
+    title: "B2B Lead Processing System",
+    description: "An intelligent automation infrastructure. It captures leads, validates data with Zod, enriches profiles using AI Agents, and instantly notifies the sales team via Slack/WhatsApp, eliminating manual data entry.",
+    imageUrl: "/images/Project-02.jpg",
+    tags: ["n8n Automation", "AI Agents", "Resend API", "Webhook Integration", "CRM"],
+    liveUrl: "/contact",
+    // githubUrl: "#", // Mantive comentado pois é código interno
   },
   // More projects can be added here
 ];
