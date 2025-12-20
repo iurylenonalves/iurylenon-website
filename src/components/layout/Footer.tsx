@@ -42,9 +42,9 @@ export function Footer() {
             &copy; {currentYear} Iury Lenon. All rights reserved.
           </p>
           <div className="flex items-center gap-x-6 text-slate-500">
-            <Link href="/privacy-policy" className="hover:text-slate-900 hover:underline">Privacy policy</Link>
-            <Link href="/terms-of-service" className="hover:text-slate-900 hover:underline">Terms of service</Link>
-            <Link href="/cookie-settings" className="hover:text-slate-900 hover:underline">Cookies settings</Link>
+            <Link href="/privacy-policy" className="hover:text-slate-900 hover:underline">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-slate-900 hover:underline">Terms of Service</Link>
+            <Link href="/cookie-policy" className="hover:text-slate-900 hover:underline">Cookie Policy</Link>
           </div>
         </div>
       </SectionWrapper>

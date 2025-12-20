@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins, Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import { CookieConsent } from "@/components/ui/cookie-consent"
 import "./globals.css";
 
 const poppins = Poppins({
@@ -88,6 +89,7 @@ export default function RootLayout({
         className={`${inter.variable} ${poppins.variable} antialiased font-sans`}
       >
         {children}
+        <CookieConsent />
         <Toaster position="bottom-right" />
       </body>
     </html>
