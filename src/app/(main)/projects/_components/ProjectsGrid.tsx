@@ -12,9 +12,9 @@ const projectsData: Project[] = [
   },
   {
     title: "Bruna Alves Photography Platform",
-    description: "Digital transformation for a photography business. Moved from a generic portfolio to a high-conversion platform with secure client galleries, SEO optimization (Rank #1 local), and automated booking flows.",
+    description: "A feature-rich portfolio & blog system. Includes a custom Admin Dashboard for content management, Google OAuth for secure access, and a dual-language architecture (i18n). Built for high performance and SEO.",
     imageUrl: "/images/home-brunaphoto.png",
-    tags: ["Next.js", "PostgreSQL", "Tailwind CSS", "Digital Transformation"],
+    tags: ["Next.js 16", "Tailwind v4", "Google OAuth", "Admin Dashboard", "i18n"],
     liveUrl: "https://brunaalvesphoto.com",
     githubUrl: "https://github.com/iurylenonalves/brunaalvesphoto-frontend",
   },
