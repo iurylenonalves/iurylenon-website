@@ -3,13 +3,21 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { FlagUK, FlagBR, FlagES } from './icons';
 import { cn } from '@/lib/utils';
+import { useTranslatedPaths } from '@/context/TranslatedSlugsContext';
 
 export function LanguageSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
+  const { paths } = useTranslatedPaths();
   
   const switchLanguage = (newLocale: string) => {
     
+    // If we have a specific path for this locale (e.g. translated blog post), use it
+    if (paths && paths[newLocale]) {
+      router.push(`/${newLocale}${paths[newLocale]}`);
+      return;
+    }
+
     const currentPath = pathname.replace(/^\/(en|pt|es)/, '');
     const newPath = `/${newLocale}${currentPath || ''}`;
     router.push(newPath);

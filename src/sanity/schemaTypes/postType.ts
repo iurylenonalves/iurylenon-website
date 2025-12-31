@@ -14,8 +14,9 @@ export const postType = defineType({
       media: 'mainImage',
       publishedAt: 'publishedAt',
       slug: 'slug.current',
+      language: 'language',
     },
-    prepare({title, author, media, publishedAt, slug}) {
+    prepare({title, author, media, publishedAt, slug, language}) {
       const date = publishedAt 
         ? new Date(publishedAt).toLocaleDateString('en-US', {
             month: 'short',
@@ -24,10 +25,11 @@ export const postType = defineType({
           })
         : 'Not published'
       
+      const lang = language ? `[${language.toUpperCase()}] ` : '';
       const subtitle = author ? `${author} • ${date}` : date
       
       return {
-        title: title || 'Untitled Post',
+        title: `${lang}${title || 'Untitled Post'}`,
         subtitle: `${subtitle} • /blog/${slug || 'no-slug'}`,
         media,
       }
@@ -35,6 +37,12 @@ export const postType = defineType({
   },
 
   fields: [
+    defineField({
+      name: 'language',
+      type: 'string',
+      readOnly: true,
+      hidden: true,
+    }),
     defineField({
       name: 'title',
       title: 'Title',

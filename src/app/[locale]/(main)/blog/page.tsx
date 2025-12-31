@@ -4,7 +4,8 @@ import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { getTranslations } from 'next-intl/server';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'BlogPage' });
   return {
     title: `${t('title')} | Iury Lenon - Web Development Insights`,
@@ -39,9 +40,9 @@ interface Post {
   };
 }
 
-async function getPosts() {
+async function getPosts(locale: string) {
   try {
-    const query = `*[_type == "post" && defined(publishedAt)] | order(publishedAt desc) {
+    const query = `*[_type == "post" && defined(publishedAt) && language == $locale] | order(publishedAt desc) {
       _id,
       title,
       "slug": slug.current,
@@ -66,7 +67,7 @@ async function getPosts() {
     
     const posts = await client.fetch<Post[]>(
       query,
-      {},
+      { locale },
       {
         cache: 'no-store',
         next: { 
@@ -83,8 +84,13 @@ async function getPosts() {
   }
 }
 
-export default async function BlogPage() {
-  const posts = await getPosts();
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function BlogPage({ params }: Props) {
+  const { locale } = await params;
+  const posts = await getPosts(locale);
   const t = await getTranslations('BlogPage');
 
   return (
@@ -132,7 +138,7 @@ export default async function BlogPage() {
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
+                      <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-primary/10 to-primary/5">
                         <div className="text-4xl">💻</div>
                       </div>
                     )}

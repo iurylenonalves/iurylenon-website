@@ -7,6 +7,7 @@ import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { TranslatedPathsUpdater } from '@/components/TranslatedPathsUpdater';
 
 interface Post {
   _id: string;
@@ -45,8 +46,32 @@ interface NavigationPost {
   publishedAt: string;
 }
 
-async function getPost(slug: string) {
-  const postQuery = `*[_type == "post" && slug.current == $slug][0] {
+async function getTranslatedPaths(postId: string): Promise<Record<string, string>> {
+  const query = `*[_type == "translation.metadata" && references($postId)][0] {
+    translations[] {
+      _key,
+      value->{
+        "slug": slug.current,
+        language
+      }
+    }
+  }`;
+  
+  const result = await clientWithToken.fetch(query, { postId }, { cache: 'no-store' });
+  
+  const paths: Record<string, string> = {};
+  if (result?.translations) {
+    result.translations.forEach((t: any) => {
+      if (t.value && t.value.slug) {
+        paths[t._key] = `/blog/${t.value.slug}`;
+      }
+    });
+  }
+  return paths;
+}
+
+async function getPost(slug: string, locale: string) {
+  const postQuery = `*[_type == "post" && slug.current == $slug && language == $locale][0] {
     _id,
     title,
     "slug": slug.current,
@@ -81,7 +106,7 @@ async function getPost(slug: string) {
 
   const post: Post = await clientWithToken.fetch(
     postQuery,
-    { slug },
+    { slug, locale },
     { 
       cache: 'no-store',
       next: { revalidate: 0 }
@@ -91,8 +116,8 @@ async function getPost(slug: string) {
   return post;
 }
 
-async function getNavigationPosts(slug: string) {
-  const navigationQuery = `*[_type == "post" && defined(publishedAt)] | order(publishedAt desc) {
+async function getNavigationPosts(slug: string, locale: string) {
+  const navigationQuery = `*[_type == "post" && defined(publishedAt) && language == $locale] | order(publishedAt desc) {
     title,
     "slug": slug.current,
     publishedAt
@@ -100,7 +125,7 @@ async function getNavigationPosts(slug: string) {
 
   const allPosts: NavigationPost[] = await clientWithToken.fetch(
     navigationQuery,
-    {},
+    { locale },
     { 
       cache: 'no-store',
       next: { revalidate: 0 }
@@ -120,7 +145,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const post = await getPost(slug);
+  const post = await getPost(slug, locale);
   const t = await getTranslations({ locale, namespace: 'BlogPost' });
 
   if (!post) {
@@ -150,79 +175,86 @@ export default async function PostPage({
 }) {
   const { slug, locale } = await params;
   const { isEnabled: isDraftMode } = await draftMode();
-  const post = await getPost(slug);
+  const post = await getPost(slug, locale);
   const t = await getTranslations({ locale, namespace: 'BlogPost' });
 
   if (!post) {
     notFound();
   }
 
-  const { previousPost, nextPost } = await getNavigationPosts(slug);
+  const translatedPaths = await getTranslatedPaths(post._id);
+  const { previousPost, nextPost } = await getNavigationPosts(slug, locale);
 
+  // Force re-render of TranslatedPathsProvider by passing a new object reference if needed,
+  // but here we just pass the paths. The key is that this component is inside the layout
+  // which also has a provider. The inner provider should override the outer one.
+  
   return (
-    <article className="min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        
-        {/* Draft Mode Banner */}
-        {isDraftMode && (
-          <div className="mb-8 max-w-5xl mx-auto">
-            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="text-yellow-600 dark:text-yellow-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-yellow-900 dark:text-yellow-100">{t('preview_mode')}</p>
-                  <p className="text-sm text-yellow-800 dark:text-yellow-200">
-                    {t('preview_desc')}
-                  </p>
-                </div>
-              </div>
-              <Link
-                href="/api/disable-draft"
-                className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg text-sm font-medium transition-colors"
-              >
-                {t('exit_preview')}
-              </Link>
-            </div>
-          </div>
-        )}
-        
-        {/* Back to Blog */}
-        <Link 
-          href="/blog"
-          className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
-        >
-          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          {t('back_to_blog')}
-        </Link>
-
-        {/* Header */}
-        <header className="max-w-4xl mx-auto mb-8 text-center">
+    <>
+      <TranslatedPathsUpdater paths={translatedPaths} />
+      <article className="min-h-screen py-16">
+        <div className="container mx-auto px-4">
           
-          {/* Categories */}
-          {post.categories && post.categories.length > 0 && (
-            <div className="flex items-center justify-center gap-2 mb-4">
-              {post.categories.map((category, index) => (
-                <span 
-                  key={index}
-                  className="text-xs font-medium px-3 py-1 bg-primary/10 text-primary rounded-full"
+          {/* Draft Mode Banner */}
+          {isDraftMode && (
+            <div className="mb-8 max-w-5xl mx-auto">
+              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="text-yellow-600 dark:text-yellow-400">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-yellow-900 dark:text-yellow-100">{t('preview_mode')}</p>
+                    <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                      {t('preview_desc')}
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  href="/api/disable-draft"
+                  className="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg text-sm font-medium transition-colors"
                 >
-                  {category.title}
-                </span>
-              ))}
+                  {t('exit_preview')}
+                </Link>
+              </div>
             </div>
           )}
+          
+          {/* Back to Blog */}
+          <Link 
+            href="/blog"
+            className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            {t('back_to_blog')}
+          </Link>
 
-          {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {post.title}
-          </h1>
+          {/* Header */}
+          <header className="max-w-4xl mx-auto mb-8 text-center">
+            
+            {/* Categories */}
+            {post.categories && post.categories.length > 0 && (
+              <div className="flex items-center justify-center gap-2 mb-4">
+                {post.categories.map((category, index) => (
+                  <span 
+                    key={index}
+                    className="text-xs font-medium px-3 py-1 bg-primary/10 text-primary rounded-full"
+                  >
+                    {category.title}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Title */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              {post.title}
+            </h1>
 
           {/* Excerpt */}
           {post.excerpt && (
@@ -438,5 +470,6 @@ export default async function PostPage({
 
       </div>
     </article>
+    </>
   );
 }
