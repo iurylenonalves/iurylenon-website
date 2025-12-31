@@ -1,9 +1,12 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { SectionWrapper } from "./SectionWrapper";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations('Footer');
+  const tNav = useTranslations('Navigation');
 
   return (
     <footer className="bg-slate-50 text-slate-700">     
@@ -24,11 +27,11 @@ export function Footer() {
 
           {/* Navigation Links */}
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-base font-medium">
-            <Link href="/about" className="hover:text-slate-900 transition-colors">About</Link>
-            <Link href="/projects" className="hover:text-slate-900 transition-colors">Projects</Link>
-            <Link href="/services" className="hover:text-slate-900 transition-colors">Services</Link>
-            <Link href="/contact" className="hover:text-slate-900 transition-colors">Contact</Link>
-            <Link href="/blog" className="hover:text-slate-900 transition-colors">Blog</Link>
+            <Link href="/about" className="hover:text-slate-900 transition-colors">{tNav('about')}</Link>
+            <Link href="/projects" className="hover:text-slate-900 transition-colors">{tNav('projects')}</Link>
+            <Link href="/services" className="hover:text-slate-900 transition-colors">{tNav('services')}</Link>
+            <Link href="/contact" className="hover:text-slate-900 transition-colors">{tNav('contact')}</Link>
+            <Link href="/blog" className="hover:text-slate-900 transition-colors">{tNav('blog')}</Link>
           </nav>
 
         </div>
@@ -39,12 +42,12 @@ export function Footer() {
         {/* Bottom Section (Copyright & Legal) */}
         <div className="mt-8 flex flex-col-reverse items-center gap-6 text-sm md:flex-row md:justify-between">
           <p className="text-slate-500">
-            &copy; {currentYear} Iury Lenon. All rights reserved.
+            &copy; {currentYear} Iury Lenon. {t('rights_reserved')}
           </p>
           <div className="flex items-center gap-x-6 text-slate-500">
-            <Link href="/privacy-policy" className="hover:text-slate-900 hover:underline">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="hover:text-slate-900 hover:underline">Terms of Service</Link>
-            <Link href="/cookie-policy" className="hover:text-slate-900 hover:underline">Cookie Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-slate-900 hover:underline">{t('privacy_policy')}</Link>
+            <Link href="/terms-of-service" className="hover:text-slate-900 hover:underline">{t('terms_of_service')}</Link>
+            <Link href="/cookie-policy" className="hover:text-slate-900 hover:underline">{t('cookie_policy')}</Link>
           </div>
         </div>
       </SectionWrapper>

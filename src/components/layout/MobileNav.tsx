@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Menu } from "lucide-react";
+import { useTranslations } from 'next-intl';
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -10,9 +12,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { LanguageSwitcher } from "../ui/language-switcher";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations('Navigation');
 
   return (    
     <div className="md:hidden">
@@ -20,40 +24,85 @@ export function MobileNav() {
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon">
             <Menu className="h-6 w-6" />
-            <span className="sr-only">Toggle Menu</span>
+            <span className="sr-only">{t('toggle_menu')}</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="flex flex-col p-6">
-          <SheetHeader>
+        
+        <SheetContent side="left" className="flex flex-col p-6 overflow-y-auto">
+          <SheetHeader className="text-left">
             <SheetTitle>
-              <Link href="/" onClick={() => setIsOpen(false)} className="font-bold text-xl font-heading">
-                Logo
+              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">                 
+                 {/* If you have the logo, use the image. If not, keep the stylized text */}
+                 <Image
+                    src="/images/iury-lenon-logotype.png"
+                    alt="Iury Lenon"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain"
+                  />
+                  <span className="font-heading font-bold text-xl">Iury Lenon</span>
               </Link>
             </SheetTitle>
           </SheetHeader>
-          {/* Navigation and buttons inside the menu */}
-          <div className="flex flex-col gap-6 py-8 text-center text-lg">
-            <Link href="/about" onClick={() => setIsOpen(false)} className="text-muted-foreground transition-colors hover:text-foreground">
-              About
+
+          {/* Navigation Links */}
+          <div className="flex flex-col gap-6 py-8 text-lg font-medium">
+            <Link 
+                href="/about" 
+                onClick={() => setIsOpen(false)} 
+                className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t('about')}
             </Link>
-            <Link href="/projects" onClick={() => setIsOpen(false)} className="text-muted-foreground transition-colors hover:text-foreground">
-              Projects
+            <Link 
+                href="/projects" 
+                onClick={() => setIsOpen(false)} 
+                className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t('projects')}
             </Link>
-            <Link href="/services" onClick={() => setIsOpen(false)} className="text-muted-foreground transition-colors hover:text-foreground">
-              Services
+            <Link 
+                href="/services" 
+                onClick={() => setIsOpen(false)} 
+                className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t('services')}
             </Link>
-            <Link href="/blog" onClick={() => setIsOpen(false)} className="text-muted-foreground transition-colors hover:text-foreground">
-              Blog
+            <Link 
+                href="/blog" 
+                onClick={() => setIsOpen(false)} 
+                className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t('blog')}
             </Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="text-muted-foreground transition-colors hover:text-primary">
-              Contact
+            <Link 
+                href="/contact" 
+                onClick={() => setIsOpen(false)} 
+                className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t('contact')}
             </Link>
           </div>
-          {/* Action buttons also inside the menu */}
-          <div className="mt-auto flex flex-col gap-3">
-            <Button variant="outline" onClick={() => setIsOpen(false)}>Download</Button>
-            <Button onClick={() => setIsOpen(false)}>Share</Button>
+
+          {/* Footer Section: Language & CTA */}
+          <div className="mt-auto flex flex-col gap-6">
+            
+            {/* Language Switcher with separator */}
+            <div className="flex items-center justify-between border-t border-border pt-4">
+                <span className="text-sm text-muted-foreground font-medium">
+                    Language / Idioma:
+                </span>
+                <LanguageSwitcher />
+            </div>
+
+            {/* CTA Button */}
+            <Button asChild className="w-full font-bold text-md h-12 shadow-md">
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                    {t('book_call')}
+                </Link>
+            </Button>
           </div>
+
         </SheetContent>
       </Sheet>
     </div>
