@@ -1,0 +1,300 @@
+{
+  "Metadata": {
+    "title": "Iury Lenon | Web Performance & Business Automation",
+    "description": "Helping businesses reduce costs and scale through Custom Web Platforms, Private Cloud Infrastructure, and AI Automation. Your Strategic Tech Partner in London.",
+    "keywords": "Business Automation, Web Performance, Private Cloud, Next.js Expert, n8n Automation, Tech Consultant London"
+  },
+  "HomePage": {
+    "hero_title_1": "High-Performance Web Platforms &",
+    "hero_title_2": "Business Automation",
+    "subtitle": "Helping ambitious companies in the UK and worldwide to scale their digital infrastructure, reduce operational costs, and automate complex workflows.",
+    "cta_primary": "Book a Strategy Call",
+    "cta_secondary": "View Case Studies",
+    "hero_image_alt": "Iury Lenon profile picture"
+  },
+  "Navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "book_call": "Book a Call",
+    "toggle_menu": "Toggle Menu",
+    "download": "Download",
+    "share": "Share"
+  },
+  "Footer": {
+    "rights_reserved": "All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "cookie_policy": "Cookie Policy"
+  },
+  "FeatureSection": {
+    "subtitle": "YOUR STRATEGIC PARTNER",
+    "title": "Engineering that drives revenue and efficiency",
+    "description": "I don't just write code; I build the digital foundation your business needs to grow. From custom platforms to automated workflows, I deliver solutions that you own and control.",
+    "feature1": "High-Performance Web Platforms (Next.js) designed for SEO dominance and maximum conversion",
+    "feature2": "Private Cloud Infrastructure (VPS) to ensure data privacy and cut recurring SaaS fees",
+    "feature3": "AI & Workflow Automation (n8n) to scale your operations without increasing headcount.",
+    "cta_explore": "Explore",
+    "cta_contact": "Contact"
+  },
+  "ServicesSection": {
+    "subtitle": "Services",
+    "title": "Web Platforms, Automation & Infrastructure",
+    "description": "I provide tailored digital solutions that drive business growth, reduce operational costs, and improve efficiency.",
+    "service1_title": "High-Performance Landing Pages",
+    "service1_desc": "Custom-coded sites designed to rank #1 on Google and convert visitors into customers. No slow builders like Wix/Wordpress.",
+    "service2_title": "Custom SaaS & Web Systems",
+    "service2_desc": "From idea to market. Robust web applications with secure login, payments, and dashboards for startups.",
+    "service3_title": "Business Process Automation",
+    "service3_desc": "Connect your apps (CRM, Email, Slack). Automate repetitive tasks using n8n and AI, saving 20+ hours per week.",
+    "service4_title": "Managed Infrastructure & Support",
+    "service4_desc": "Your own private server (VPS). We manage security, backups, and updates so you can focus on your business.",
+    "cta_plans": "View Plans & Pricing",
+    "cta_started": "Get started"
+  },
+  "CtaSection": {
+    "title": "Stop losing time with manual tasks and slow websites",
+    "description_1": "Let's build a digital infrastructure that works for you 24/7.",
+    "description_2": "Book a discovery call today.",
+    "cta_book": "Book a Call",
+    "cta_plans": "See Plans & Pricing"
+  },
+  "AboutPage": {
+    "Hero": {
+      "hero_title_1": "More Than Just Code:",
+      "hero_title_2": "Your Strategic Tech Partner",
+      "description": "Based in London, serving ambitious businesses worldwide. I bridge the gap between complex engineering, business automation, and tangible growth."
+    },
+    "Bio": {
+      "title": "Engineering with a Business Mindset",
+      "p1": "My journey into software engineering wasn't just about learning syntax; it was about solving real-world inefficiencies. I specialize in building end-to-end solutions that don't just \"work\", but actively <strong>reduce costs and increase revenue</strong>.",
+      "p2": "I move beyond the traditional \"freelancer\" role. I act as an architect for your digital infrastructure. Whether it's a high-performance web platform that ranks #1 on Google, or a private automation server (VPS) that eliminates expensive SaaS fees, my goal is to give you ownership and control over your technology.",
+      "p3": "With fluency in <strong>English, Portuguese, and Spanish</strong>, I bring a global perspective to every project, ensuring seamless communication with international teams and clients. I am here to be the technical partner who helps your business scale."
+    },
+    "Skills": {
+      "title": "Enterprise-Grade Technology Stack",
+      "description": "I use a modern, robust toolkit designed for scalability, security, and long-term maintainability.",
+      "categories": {
+        "web_core": "Web Platforms Core",
+        "automation_ai": "Automation & AI",
+        "cloud_infra": "Cloud & Infrastructure",
+        "backend_api": "Backend & API",
+        "devops_quality": "DevOps & Quality",
+        "tools_design": "Tools & Design"
+      }
+    }
+  },
+  "ProjectsPage": {
+    "Hero": {
+      "title": "Case Studies & <span>Solutions</span>",
+      "description": "Real-world examples of high-performance web platforms and intelligent automations that reduce costs, save time, and drive business growth."
+    },
+    "Card": {
+      "live_project": "Live Project",
+      "view_code": "View Code",
+      "in_progress": "In Progress",
+      "see_action": "See it in action"
+    },
+    "Projects": {
+      "p1_title": "High-End Aesthetic Clinic Platform",
+      "p1_desc": "A full-scale digital infrastructure for a premium clinic. Features a Headless CMS (Sanity) for real-time content management, a hybrid E-commerce system for selling products & treatments, and sub-second performance.",
+      "p2_title": "Bruna Alves Photography Platform",
+      "p2_desc": "A feature-rich portfolio & blog system. Includes a custom Admin Dashboard for content management, Google OAuth for secure access, and a dual-language architecture (i18n). Built for high performance and SEO.",
+      "p3_title": "B2B Lead Processing System",
+      "p3_desc": "An intelligent automation infrastructure. It captures leads, validates data with Zod, enriches profiles using AI Agents, and instantly notifies the sales team via Slack/WhatsApp, eliminating manual data entry."
+    }
+  },
+  "ServicesPage": {
+    "Hero": {
+      "title": "Solutions for <span>Growth & Efficiency</span>",
+      "description": "Comprehensive technical services designed to build high-performance web platforms, reduce operational costs with private infrastructure, and automate manual workflows."
+    },
+    "List": {
+      "s1_title": "High-Performance Landing Pages",
+      "s1_subtitle": "Custom-coded platforms designed to rank #1 on Google and convert visitors into revenue. No slow builders like Wix or Wordpress.",
+      "s1_d1": "Built with Next.js for instant loading speeds (100/100 Lighthouse).",
+      "s1_d2": "Technical SEO architecture ensuring maximum visibility.",
+      "s1_d3": "Integration with CRMs (HubSpot, Pipedrive) and marketing tools.",
+      "s1_d4": "Mobile-first design optimized for conversion.",
+      "s2_title": "Custom SaaS & Web Systems",
+      "s2_subtitle": "Turn your startup idea into a robust product. Secure, scalable web applications built for growth.",
+      "s2_d1": "Secure user authentication and role-based access control.",
+      "s2_d2": "Subscription and payment integration (Stripe/Lemon Squeezy).",
+      "s2_d3": "Real-time dashboards and data visualization.",
+      "s2_d4": "Scalable database architecture (PostgreSQL).",
+      "s3_title": "Business Process Automation",
+      "s3_subtitle": "Stop wasting time on manual tasks. We connect your apps and automate workflows using AI and n8n.",
+      "s3_d1": "Automate repetitive tasks (Data Entry, Invoicing, Emails).",
+      "s3_d2": "Connect disparate apps (e.g., Typeform → OpenAI → Slack).",
+      "s3_d3": "Intelligent workflows powered by AI agents.",
+      "s3_d4": "Reduction of human error and operational costs.",
+      "s4_title": "Managed Infrastructure & Support",
+      "s4_subtitle": "Your own Private Cloud. We host, secure, and maintain your infrastructure so you can focus on your business.",
+      "s4_d1": "Setup of Private VPS in the UK/Europe (GDPR Compliant).",
+      "s4_d2": "Massive cost reduction compared to SaaS tools (Zapier/Make).",
+      "s4_d3": "24/7 Uptime monitoring and automated backups.",
+      "s4_d4": "Monthly security updates and maintenance."
+    }
+  },
+  "ContactPage": {
+    "Hero": {
+      "title": "Let's Build Your <span>Digital Future</span>",
+      "description": "Ready to scale your business? Whether you need a high-performance web platform, custom automation, or secure infrastructure, I'm here to help you engineer the solution."
+    },
+    "Form": {
+      "title": "Get in Touch",
+      "description": "I'm currently available for freelance opportunities and open to discussing new projects. Feel free to reach out directly or connect with me on social media.",
+      "name_label": "Name",
+      "name_placeholder": "Your name",
+      "email_label": "Email",
+      "email_placeholder": "your.email@example.com",
+      "service_label": "What are you looking for?",
+      "service_placeholder": "Select a service",
+      "services": {
+        "landing_page": "High-Performance Landing Page",
+        "saas_system": "Custom SaaS / Web System",
+        "automation": "Business Automation (n8n)",
+        "infrastructure": "Managed Infrastructure (VPS)",
+        "audit": "Technical Audit",
+        "other": "Other Inquiry"
+      },
+      "subject_label": "Subject",
+      "subject_placeholder": "Project inquiry...",
+      "message_label": "Message",
+      "message_placeholder": "Tell me about your project goals, timeline, or current challenges...",
+      "submit_btn": "Book Strategy Call",
+      "submitting_btn": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again.",
+      "too_many_requests": "Too many requests. Please wait a few minutes and try again."
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "last_updated": "Last updated: December 20, 2025",
+    "intro": "This Privacy Policy describes how <strong>Iury Lenon</strong> (operating as a Sole Trader in the United Kingdom) collects, uses, and shares your personal information when you visit <strong>iurylenon.com</strong>. We are committed to protecting your privacy and ensuring your data is handled in compliance with the UK GDPR and the Data Protection Act 2018.",
+    "s1_title": "1. Information We Collect",
+    "s1_desc": "We collect information that you voluntarily provide to us via our contact forms and technical data necessary for the site operation:",
+    "s1_l1": "<strong>Contact Data:</strong> Name, email address, and phone number provided in the contact form.",
+    "s1_l2": "<strong>Business Data:</strong> Project details and requirements you share in your message.",
+    "s1_l3": "<strong>Technical Data:</strong> IP address, browser type, and device information (collected anonymously for security and analytics).",
+    "s2_title": "2. How We Use Your Information",
+    "s2_desc": "We use this data strictly for business purposes:",
+    "s2_l1": "To respond to your inquiries and provide technical quotes.",
+    "s2_l2": "To execute the services requested (Web Development & Automation).",
+    "s2_l3": "To comply with legal obligations (e.g., tax and accounting).",
+    "s3_title": "3. Data Sharing & Tech Stack",
+    "s3_desc": "We do not sell your data. We only share data with trusted third-party service providers necessary to run our infrastructure:",
+    "s3_l1": "<strong>Vercel:</strong> Hosting provider (Server logs).",
+    "s3_l2": "<strong>Resend:</strong> Email delivery service (Contact form processing).",
+    "s3_l3": "<strong>Sanity:</strong> Content Management System.",
+    "s4_title": "4. Your Rights",
+    "s4_desc": "Under the UK GDPR, you have the right to access, correct, or delete your personal data. To exercise these rights, please contact us at <a>contact@iurylenon.com</a>."
+  },
+  "TermsOfService": {
+    "title": "Terms of Service",
+    "last_updated": "Last updated: December 20, 2025",
+    "s1_title": "1. Agreement to Terms",
+    "s1_desc": "By accessing iurylenon.com, you agree to be bound by these Terms of Service. These terms apply to all visitors, users, and others who access or use the Service provided by <strong>Iury Lenon</strong> (the \"Service Provider\").",
+    "s2_title": "2. Intellectual Property",
+    "s2_desc": "The Site and its original content (including code structure, design, text, and graphics) are the exclusive property of Iury Lenon and are protected by the copyright laws of the United Kingdom and international treaties. You may not reproduce or redistribute any part of this site without express written permission.",
+    "s3_title": "3. Limitation of Liability",
+    "s3_desc": "In no event shall Iury Lenon be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of the website. The services are provided \"as is\" and \"as available\".",
+    "s4_title": "4. Governing Law",
+    "s4_desc": "These Terms shall be governed and construed in accordance with the laws of <strong>England and Wales</strong>. Any disputes relating to these terms will be subject to the exclusive jurisdiction of the courts of England and Wales.",
+    "s5_title": "5. Contact",
+    "s5_desc": "For any questions regarding these Terms, please contact us at <a>contact@iurylenon.com</a>."
+  },
+  "CookiePolicy": {
+    "title": "Cookie Policy",
+    "last_updated": "Last updated: December 20, 2025",
+    "s1_title": "1. What Are Cookies?",
+    "s1_desc": "Cookies are small text files stored on your device when you visit a website. They are standard in the industry and help us make the website work efficiently and provide analytics on site performance.",
+    "s2_title": "2. How We Use Cookies",
+    "s2_l1": "<span>Essential Cookies:</span> These are strictly necessary for the website to function (e.g., security headers, session states). You cannot opt-out of these.",
+    "s2_l2": "<span>Analytics Cookies:</span> We use tools like Vercel Analytics to understand anonymous visitor behavior (e.g., which pages are most popular). This data does not identify you personally.",
+    "s3_title": "3. Managing Cookies",
+    "s3_desc": "Most web browsers allow you to control cookies through their settings preferences. You can choose to block or delete cookies, but this may affect the functionality of some parts of the site.",
+    "s4_title": "4. Contact",
+    "s4_desc": "If you have questions about our use of cookies, please email <a>contact@iurylenon.com</a>."
+  },
+  "HelpPage": {
+    "title": "📝 Blog Guide",
+    "subtitle": "How to create, edit and manage blog posts",
+    "quick_access_title": "🚀 Quick Access",
+    "sanity_studio": "🎨 Sanity Studio",
+    "sanity_studio_desc": "Create and edit posts",
+    "public_blog": "📰 Public Blog",
+    "public_blog_desc": "View published posts",
+    "create_posts_title": "✍️ How to Create Posts",
+    "for_draft_title": "📝 For Draft",
+    "for_draft_l1": "Access the <strong>Studio</strong> (link above)",
+    "for_draft_l2": "Click on <strong>\"Blog Post\"</strong> → <strong>\"+ Create\"</strong>",
+    "for_draft_l3": "Fill in: Title, Content, Image",
+    "for_draft_l4": "<strong>DON'T fill</strong> \"Published At\"",
+    "for_draft_l5": "Press <strong>Ctrl+S</strong> to save",
+    "for_draft_success": "✅ Post saved as draft (only you can see it)",
+    "to_publish_title": "🚀 To Publish",
+    "to_publish_l1": "Create the post normally",
+    "to_publish_l2": "<strong>Fill in</strong> the \"Published At\" field with the current date",
+    "to_publish_l3": "Press <strong>Ctrl+S</strong> to save",
+    "to_publish_success": "✅ Post published (appears on the blog automatically)",
+    "preview_system_title": "👁️ Preview System",
+    "preview_how_to": "🔍 How to view drafts before publishing",
+    "preview_step1": "<strong>1. Create the post as draft</strong>",
+    "preview_step2": "<strong>2. Copy the post \"slug\"</strong> (URL field in Studio)",
+    "preview_step3": "<strong>3. Use this URL:</strong>",
+    "preview_example": "<strong>Example:</strong> If the slug is \"my-first-post\", the URL will be:",
+    "preview_tip": "<strong>💡 Tip:</strong> When in preview mode, you'll see a <span>yellow banner</span> at the top of posts.",
+    "useful_links_title": "🔗 Useful Links",
+    "exit_preview": "Exit Preview Mode",
+    "exit_preview_desc": "Remove the yellow banner",
+    "click_here": "Click here",
+    "workflow_title": "🔄 Recommended Workflow",
+    "new_posts_title": "📝 New Posts",
+    "new_posts_l1": "1. Write in Studio (without date)",
+    "new_posts_l2": "2. Test in preview",
+    "new_posts_l3": "3. Make adjustments",
+    "new_posts_l4": "4. Fill in \"Published At\"",
+    "new_posts_l5": "5. Post goes live! 🚀",
+    "existing_posts_title": "✏️ Existing Posts",
+    "existing_posts_l1": "1. Edit in Studio",
+    "existing_posts_l2": "2. Save changes",
+    "existing_posts_l3": "3. Changes are live! ✅",
+    "troubleshooting_title": "🆘 If Something Goes Wrong",
+    "trouble_post_missing": "❓ Post doesn't appear on blog",
+    "trouble_post_missing_l1": "• Check if \"Published At\" is filled in",
+    "trouble_post_missing_l2": "• Wait a few seconds and refresh the page",
+    "trouble_post_missing_l3": "• Confirm you saved the post (Ctrl+S)",
+    "trouble_preview_broken": "❓ Preview doesn't work",
+    "trouble_preview_broken_l1": "• Check if the slug is correct in the URL",
+    "trouble_preview_broken_l2": "• Confirm the post was saved in Studio",
+    "trouble_preview_broken_l3": "• Try accessing the post normally first",
+    "footer_msg": "💝 Any questions? Just ask!",
+    "footer_status": "System working perfectly ✨"
+  },
+  "BlogPage": {
+    "title": "Blog",
+    "subtitle": "Articles and insights about Full Stack development, React, Next.js, TypeScript, and modern web technologies.",
+    "coming_soon_title": "Coming Soon",
+    "coming_soon_desc": "I'm preparing amazing content about web development for you.",
+    "read_more": "Read more",
+    "by": "By"
+  },
+  "BlogPost": {
+    "not_found": "Post Not Found",
+    "preview_mode": "Preview Mode Active",
+    "preview_desc": "You are viewing unpublished content",
+    "exit_preview": "Exit Preview",
+    "back_to_blog": "Back to Blog",
+    "previous_post": "Previous Post",
+    "next_post": "Next Post"
+  },
+  "CookieConsent": {
+    "description": "We use cookies to improve your experience and analyze site traffic. By continuing, you agree to our <privacy>Privacy Policy</privacy> and <cookie>Cookie Policy</cookie>.",
+    "accept_all": "Accept All",
+    "close_aria_label": "Close cookie banner"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "Metadata": {
+    "title": "Iury Lenon | Alta Performance Web & Automação de Negócios",
+    "description": "Ajudando empresas a reduzir custos e escalar através de Plataformas Web Personalizadas, Nuvem Privada e Automação com IA. Seu Parceiro Tecnológico Estratégico.",
+    "keywords": "Automação de Negócios, Performance Web, Nuvem Privada, Especialista Next.js, Automação n8n, Consultor de Tecnologia"
+  },
+  "HomePage": {
+    "hero_title_1": "Plataformas Web de Alta Performance &",
+    "hero_title_2": "Automação de Negócios",
+    "subtitle": "Ajudando empresas ambiciosas no Reino Unido, Brasil e Europa a escalar sua infraestrutura digital, reduzir custos operacionais e automatizar fluxos de trabalho complexos.",
+    "cta_primary": "Agendar Sessão Estratégica",
+    "cta_secondary": "Ver Estudos de Caso",
+    "hero_image_alt": "Foto de perfil de Iury Lenon"
+  },
+  "Navigation": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "services": "Serviços",
+    "blog": "Blog",
+    "contact": "Contato",
+    "book_call": "Agendar Reunião",
+    "toggle_menu": "Abrir Menu",
+    "download": "Baixar",
+    "share": "Compartilhar"
+  },
+  "Footer": {
+    "rights_reserved": "Todos os direitos reservados.",
+    "privacy_policy": "Política de Privacidade",
+    "terms_of_service": "Termos de Uso",
+    "cookie_policy": "Política de Cookies"
+  },
+  "FeatureSection": {
+    "subtitle": "SEU PARCEIRO ESTRATÉGICO",
+    "title": "Engenharia que gera Faturamento e Eficiência",
+    "description": "Não entrego apenas código; construo a fundação digital que seu negócio precisa para crescer. De plataformas personalizadas a automações complexas, entrego soluções que você domina e controla.",
+    "feature1": "Plataformas Web de Alta Performance (Next.js) projetadas para dominar o SEO e maximizar conversão.",
+    "feature2": "Infraestrutura de Nuvem Privada (VPS) para garantir soberania de dados e eliminar taxas de SaaS.",
+    "feature3": "IA e Automação de Fluxos (n8n) para escalar sua operação sem aumentar o número de funcionários.",
+    "cta_explore": "Explorar Soluções",
+    "cta_contact": "Entrar em Contato"
+  },
+  "ServicesSection": {
+    "subtitle": "Serviços",
+    "title": "Plataformas Web, Automação e Infraestrutura",
+    "description": "Soluções digitais sob medida que impulsionam o crescimento, cortam custos operacionais e blindam a eficiência do seu negócio.",
+    "service1_title": "Landing Pages de Alta Conversão",
+    "service1_desc": "Desenvolvimento nativo projetado para alcançar o topo do Google e transformar visitantes em clientes. Nada de construtores lentos como Wix ou Wordpress.",
+    "service2_title": "SaaS e Sistemas Web",
+    "service2_desc": "Da ideia ao mercado (MVP). Aplicações web robustas com login seguro, pagamentos e dashboards administrativos.",
+    "service3_title": "Automação de Processos (BPA)",
+    "service3_desc": "Conecte seus apps (CRM, Email, Slack). Automatize tarefas manuais usando n8n e IA, economizando mais de 20h semanais da sua equipe.",
+    "service4_title": "Infraestrutura Gerenciada (DevOps)",
+    "service4_desc": "Seu próprio servidor privado (VPS). Eu cuido da segurança, backups e atualizações para você focar apenas no negócio.",
+    "cta_plans": "Ver Planos e Preços",
+    "cta_started": "Iniciar Projeto"
+  },
+  "CtaSection": {
+    "title": "Pare de perder tempo com tarefas manuais e sites lentos",
+    "description_1": "Vamos construir uma infraestrutura digital que trabalha para você 24/7.",
+    "description_2": "Agende uma reunião de diagnóstico hoje.",
+    "cta_book": "Agendar Reunião",
+    "cta_plans": "Ver Planos e Preços"
+  },
+  "AboutPage": {
+    "Hero": {
+      "hero_title_1": "Mais do que Apenas Código:",
+      "hero_title_2": "Seu Parceiro Tecnológico Estratégico",
+      "description": "Baseado em Londres, atendendo empresas ambiciosas globalmente. Eu elimino o abismo entre engenharia complexa, automação e crescimento real."
+    },
+    "Bio": {
+      "title": "Engenharia com Mentalidade de Negócios",
+      "p1": "Minha jornada na engenharia de software não foi apenas sobre aprender sintaxe; foi sobre resolver ineficiências reais. Especializo-me em construir soluções de ponta a ponta que não apenas \"funcionam\", mas ativamente <strong>reduzem custos e aumentam o faturamento</strong>.",
+      "p2": "Vou além do papel tradicional de \"freelancer\". Atuo como o arquiteto da sua infraestrutura digital. Seja uma plataforma web que lidera o Google ou um servidor de automação privado que elimina mensalidades caras, meu objetivo é dar a você controle total sobre sua tecnologia.",
+      "p3": "Com fluência em <strong>Inglês, Português e Espanhol</strong>, trago uma perspectiva global para cada projeto, garantindo comunicação perfeita com equipes internacionais. Estou aqui para ser o parceiro técnico que faz seu negócio escalar."
+    },
+    "Skills": {
+      "title": "Tecnologia de Nível Empresarial",
+      "description": "Utilizo um stack moderno e robusto, projetado para escalabilidade, segurança e manutenção a longo prazo.",
+      "categories": {
+        "web_core": "Plataformas Web Core",
+        "automation_ai": "Automação & IA",
+        "cloud_infra": "Nuvem & Infraestrutura",
+        "backend_api": "Backend & API",
+        "devops_quality": "DevOps & Qualidade",
+        "tools_design": "Ferramentas & Design"
+      }
+    }
+  },
+  "ProjectsPage": {
+    "Hero": {
+      "title": "Estudos de Caso & <span>Soluções</span>",
+      "description": "Exemplos reais de plataformas de alta performance e automações inteligentes que reduziram custos, economizaram tempo e geraram crescimento."
+    },
+    "Card": {
+      "live_project": "Ver Projeto Online",
+      "view_code": "Ver Código",
+      "in_progress": "Em Desenvolvimento",
+      "see_action": "Ver em ação"
+    },
+    "Projects": {
+      "p1_title": "Plataforma Clínica Estética Premium",
+      "p1_desc": "Infraestrutura digital completa. Possui CMS Headless (Sanity) para gestão de conteúdo em tempo real, E-commerce híbrido para venda de produtos/tratamentos e performance ultrarrápida (sub-second).",
+      "p2_title": "Plataforma de Fotografia Bruna Alves",
+      "p2_desc": "Sistema de portfólio e blog completo. Inclui Dashboard Administrativo personalizado, Login seguro com Google e arquitetura internacional (i18n). Foco total em SEO e conversão.",
+      "p3_title": "Sistema de Processamento de Leads B2B",
+      "p3_desc": "Infraestrutura de automação inteligente. Captura leads, valida dados, enriquece perfis usando Agentes de IA e notifica a equipe de vendas via Slack/WhatsApp instantaneamente."
+    }
+  },
+  "ServicesPage": {
+    "Hero": {
+      "title": "Soluções para <span>Crescimento & Eficiência</span>",
+      "description": "Serviços técnicos desenhados para construir plataformas de alta performance, reduzir custos com infraestrutura privada e eliminar trabalho manual."
+    },
+    "List": {
+      "s1_title": "Landing Pages de Alta Performance",
+      "s1_subtitle": "Plataformas desenvolvidas para alcançar o topo do Google e converter visitantes em receita. Sem a lentidão de Wix ou Wordpress.",
+      "s1_d1": "Next.js para carregamento instantâneo (Score 100/100).",
+      "s1_d2": "Arquitetura de SEO Técnico para máxima visibilidade.",
+      "s1_d3": "Integração nativa com CRMs (HubSpot, Pipedrive).",
+      "s1_d4": "Design Mobile-First focado em conversão.",
+      "s2_title": "SaaS Personalizado e Sistemas Web",
+      "s2_subtitle": "Transforme sua ideia em um produto robusto. Aplicações seguras e escaláveis preparadas para crescer.",
+      "s2_d1": "Autenticação segura e controle de acesso (Roles).",
+      "s2_d2": "Assinaturas e Pagamentos (Stripe/Lemon Squeezy).",
+      "s2_d3": "Dashboards em tempo real para visualização de dados.",
+      "s2_d4": "Banco de dados escalável (PostgreSQL).",
+      "s3_title": "Automação de Processos (BPA)",
+      "s3_subtitle": "Pare de desperdiçar tempo. Conectamos seus apps e automatizamos fluxos inteiros usando IA e n8n.",
+      "s3_d1": "Tarefas repetitivas (Entrada de Dados, Notas Fiscais).",
+      "s3_d2": "Conexão entre apps (ex: Typeform → OpenAI → Slack).",
+      "s3_d3": "Fluxos inteligentes com Agentes de IA.",
+      "s3_d4": "Eliminação de erro humano e custo operacional.",
+      "s4_title": "Infraestrutura Gerenciada & Suporte",
+      "s4_subtitle": "Sua Nuvem Privada. Eu hospedo, protejo e mantenho sua infraestrutura para você focar no negócio.",
+      "s4_d1": "VPS Privada no Reino Unido/Europa (GDPR Compliant).",
+      "s4_d2": "Redução drástica de custos vs SaaS (Zapier/Make).",
+      "s4_d3": "Monitoramento 24/7 e backups automáticos.",
+      "s4_d4": "Manutenção mensal e updates de segurança."
+    }
+  },
+  "ContactPage": {
+    "Hero": {
+      "title": "Vamos Construir Seu <span>Futuro Digital</span>",
+      "description": "Pronto para escalar? Se você precisa de performance web, automação inteligente ou infraestrutura segura, estou aqui para arquitetar a solução."
+    },
+    "Form": {
+      "title": "Fale Comigo",
+      "description": "Estou disponível para novos projetos e consultorias. Preencha o formulário abaixo para agendarmos uma conversa.",
+      "name_label": "Nome",
+      "name_placeholder": "Seu nome completo",
+      "email_label": "E-mail Corporativo",
+      "email_placeholder": "nome@suaempresa.com",
+      "service_label": "Como posso ajudar?",
+      "service_placeholder": "Selecione uma solução",
+      "services": {
+        "landing_page": "Landing Page / Site de Alta Performance",
+        "saas_system": "SaaS / Sistema Web Personalizado",
+        "automation": "Automação de Negócios (n8n/IA)",
+        "infrastructure": "Infraestrutura Gerenciada (VPS)",
+        "audit": "Auditoria Técnica / Consultoria",
+        "other": "Outro Assunto"
+      },
+      "subject_label": "Assunto",
+      "subject_placeholder": "Resumo do projeto...",
+      "message_label": "Detalhes do Projeto",
+      "message_placeholder": "Conte-me sobre seus objetivos, prazos ou desafios atuais...",
+      "submit_btn": "Solicitar Reunião",
+      "submitting_btn": "Enviando...",
+      "success": "Mensagem recebida! Entrarei em contato em breve.",
+      "error": "Erro ao enviar. Por favor, tente novamente.",
+      "too_many_requests": "Muitas tentativas. Aguarde um momento."
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Política de Privacidade",
+    "last_updated": "Última atualização: 20 de Dezembro de 2025",
+    "intro": "Esta Política de Privacidade descreve como <strong>Iury Lenon</strong> (operando como Empresário Individual no Reino Unido) coleta, usa e compartilha suas informações pessoais ao visitar <strong>iurylenon.com</strong>. Estamos comprometidos com a proteção de seus dados conforme o GDPR (Reino Unido) e a Lei de Proteção de Dados de 2018.",
+    "s1_title": "1. Informações que Coletamos",
+    "s1_desc": "Coletamos informações fornecidas voluntariamente em formulários e dados técnicos de operação:",
+    "s1_l1": "<strong>Dados de Contato:</strong> Nome, e-mail e telefone inseridos no formulário.",
+    "s1_l2": "<strong>Dados de Negócios:</strong> Detalhes de projetos compartilhados na mensagem.",
+    "s1_l3": "<strong>Dados Técnicos:</strong> IP, navegador e dispositivo (anônimos, para segurança e análise).",
+    "s2_title": "2. Uso das Informações",
+    "s2_desc": "Utilizamos estes dados estritamente para fins comerciais:",
+    "s2_l1": "Responder a consultas e fornecer orçamentos.",
+    "s2_l2": "Executar os serviços contratados (Desenvolvimento e Automação).",
+    "s2_l3": "Cumprir obrigações legais (fiscais e contábeis).",
+    "s3_title": "3. Compartilhamento e Infraestrutura",
+    "s3_desc": "Não vendemos seus dados. Compartilhamos apenas com provedores essenciais para nossa operação:",
+    "s3_l1": "<strong>Vercel:</strong> Hospedagem segura (Logs de servidor).",
+    "s3_l2": "<strong>Resend:</strong> Entrega de e-mail transacional.",
+    "s3_l3": "<strong>Sanity:</strong> Gestão de Conteúdo.",
+    "s4_title": "4. Seus Direitos",
+    "s4_desc": "Sob o GDPR, você tem direito a acessar, corrigir ou excluir seus dados. Para exercer esse direito, contate <a>contact@iurylenon.com</a>."
+  },
+  "TermsOfService": {
+    "title": "Termos de Uso",
+    "last_updated": "Última atualização: 20 de Dezembro de 2025",
+    "s1_title": "1. Aceite dos Termos",
+    "s1_desc": "Ao acessar iurylenon.com, você concorda com estes Termos de Uso. Eles se aplicam a todos que acessam o Serviço fornecido por <strong>Iury Lenon</strong>.",
+    "s2_title": "2. Propriedade Intelectual",
+    "s2_desc": "O Site e seu conteúdo original (código, design, texto) são propriedade exclusiva de Iury Lenon, protegidos por leis de direitos autorais do Reino Unido. É proibida a reprodução sem permissão.",
+    "s3_title": "3. Limitação de Responsabilidade",
+    "s3_desc": "Iury Lenon não será responsável por danos indiretos decorrentes do uso do site. Os serviços são fornecidos \"como estão\".",
+    "s4_title": "4. Lei Aplicável",
+    "s4_desc": "Estes Termos são regidos pelas leis da <strong>Inglaterra e País de Gales</strong>. Disputas estarão sujeitas à jurisdição exclusiva dos tribunais locais.",
+    "s5_title": "5. Contato",
+    "s5_desc": "Dúvidas sobre estes Termos? Contate <a>contact@iurylenon.com</a>."
+  },
+  "CookiePolicy": {
+    "title": "Política de Cookies",
+    "last_updated": "Última atualização: 20 de Dezembro de 2025",
+    "s1_title": "1. O Que São Cookies?",
+    "s1_desc": "Pequenos arquivos de texto salvos no seu dispositivo para garantir o funcionamento eficiente do site e fornecer métricas de desempenho.",
+    "s2_title": "2. Como Usamos",
+    "s2_l1": "<span>Essenciais:</span> Necessários para o site funcionar (segurança, sessão). Não é possível desativar.",
+    "s2_l2": "<span>Análise:</span> Ferramentas como Vercel Analytics para entender comportamento anônimo (páginas populares). Não identificam você pessoalmente.",
+    "s3_title": "3. Gerenciamento",
+    "s3_desc": "Você pode bloquear ou excluir cookies nas configurações do seu navegador, mas isso pode afetar funcionalidades do site.",
+    "s4_title": "4. Contato",
+    "s4_desc": "Dúvidas sobre cookies? Envie e-mail para <a>contact@iurylenon.com</a>."
+  },
+  "HelpPage": {
+    "title": "📝 Guia do Blog",
+    "subtitle": "Gestão de Postagens",
+    "quick_access_title": "🚀 Acesso Rápido",
+    "sanity_studio": "🎨 Sanity Studio",
+    "sanity_studio_desc": "Criar/Editar posts",
+    "public_blog": "📰 Blog Público",
+    "public_blog_desc": "Ver posts no ar",
+    "create_posts_title": "✍️ Criando Posts",
+    "for_draft_title": "📝 Rascunho (Draft)",
+    "for_draft_l1": "Acesse o <strong>Studio</strong>",
+    "for_draft_l2": "Clique em <strong>\"Blog Post\"</strong> → <strong>\"+ Create\"</strong>",
+    "for_draft_l3": "Preencha: Título, Conteúdo, Imagem",
+    "for_draft_l4": "<strong>NÃO preencha</strong> \"Published At\"",
+    "for_draft_l5": "<strong>Ctrl+S</strong> para salvar",
+    "for_draft_success": "✅ Salvo como rascunho (invisível ao público)",
+    "to_publish_title": "🚀 Publicar",
+    "to_publish_l1": "Crie ou edite o post",
+    "to_publish_l2": "<strong>Preencha</strong> \"Published At\" com a data de hoje",
+    "to_publish_l3": "<strong>Ctrl+S</strong> para salvar",
+    "to_publish_success": "✅ Publicado (visível no blog)",
+    "preview_system_title": "👁️ Pré-visualização",
+    "preview_how_to": "🔍 Ver antes de publicar",
+    "preview_step1": "<strong>1. Crie como rascunho</strong>",
+    "preview_step2": "<strong>2. Copie o \"slug\"</strong> (campo URL)",
+    "preview_step3": "<strong>3. Acesse a URL:</strong>",
+    "preview_example": "<strong>Ex:</strong> Se o slug é \"post-1\", a URL será:",
+    "preview_tip": "<strong>💡 Dica:</strong> No modo preview, aparecerá um <span>banner amarelo</span>.",
+    "useful_links_title": "🔗 Links",
+    "exit_preview": "Sair do Preview",
+    "exit_preview_desc": "Remove o banner amarelo",
+    "click_here": "Clique aqui",
+    "workflow_title": "🔄 Fluxo Recomendado",
+    "new_posts_title": "📝 Novo Post",
+    "new_posts_l1": "1. Escreva no Studio (sem data)",
+    "new_posts_l2": "2. Teste no Preview",
+    "new_posts_l3": "3. Ajuste se necessário",
+    "new_posts_l4": "4. Preencha Data de Publicação",
+    "new_posts_l5": "5. Pronto! 🚀",
+    "existing_posts_title": "✏️ Editar Post",
+    "existing_posts_l1": "1. Edite no Studio",
+    "existing_posts_l2": "2. Salve (Ctrl+S)",
+    "existing_posts_l3": "3. Atualizado! ✅",
+    "troubleshooting_title": "🆘 Ajuda",
+    "trouble_post_missing": "❓ Post não aparece",
+    "trouble_post_missing_l1": "• Verifique o campo \"Published At\"",
+    "trouble_post_missing_l2": "• Atualize a página",
+    "trouble_post_missing_l3": "• Verifique se salvou",
+    "trouble_preview_broken": "❓ Preview falhou",
+    "trouble_preview_broken_l1": "• Verifique o slug na URL",
+    "trouble_preview_broken_l2": "• Verifique se o post existe no Studio",
+    "trouble_preview_broken_l3": "• Tente o link normal primeiro",
+    "footer_msg": "💝 Dúvidas? Me chame!",
+    "footer_status": "Sistema operacional ✨"
+  },
+  "BlogPage": {
+    "title": "Blog",
+    "subtitle": "Artigos sobre Desenvolvimento Full Stack, Next.js, Automação e estratégias tech para negócios.",
+    "coming_soon_title": "Em Breve",
+    "coming_soon_desc": "Conteúdo técnico de alto nível em preparação.",
+    "read_more": "Ler artigo",
+    "by": "Por"
+  },
+  "BlogPost": {
+    "not_found": "Post Não Encontrado",
+    "preview_mode": "Modo Preview Ativo",
+    "preview_desc": "Você está vendo conteúdo não publicado",
+    "exit_preview": "Sair do Preview",
+    "back_to_blog": "Voltar ao Blog",
+    "previous_post": "Anterior",
+    "next_post": "Próximo"
+  },
+  "CookieConsent": {
+    "description": "Utilizamos cookies para melhorar sua experiência e analisar o tráfego do site. Ao continuar, você concorda com nossa <privacy>Política de Privacidade</privacy> e <cookie>Política de Cookies</cookie>.",
+    "accept_all": "Aceitar Tudo",
+    "close_aria_label": "Fechar banner de cookies"
+  }
+}
