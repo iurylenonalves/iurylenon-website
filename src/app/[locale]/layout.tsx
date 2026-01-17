@@ -7,6 +7,8 @@ import { Toaster } from "react-hot-toast";
 import { CookieConsent } from "@/components/ui/cookie-consent"
 import type { Metadata, Viewport } from "next";
 import "../globals.css";
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+import JsonLd from '@/components/seo/JsonLd';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -105,6 +107,8 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={`${inter.variable} ${poppins.variable} antialiased font-sans`}>
+        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        <JsonLd />
         <NextIntlClientProvider messages={messages}>
           {children}
           <CookieConsent />
