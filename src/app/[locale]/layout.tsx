@@ -49,6 +49,16 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
     keywords: t('keywords').split(', '),
     authors: [{ name: "Iury Lenon" }],
     creator: "Iury Lenon",
+
+    alternates: {      
+      canonical: `${baseUrl}/${locale}`,     
+      languages: {
+        'en': `${baseUrl}/en`,
+        'pt': `${baseUrl}/pt`,
+        'es': `${baseUrl}/es`,
+        'x-default': `${baseUrl}/en`,
+      },
+    },
     
     openGraph: {
       type: "website",
@@ -72,15 +82,7 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       title: t('title'),
       description: t('description'),
       images: ["/images/iury-lenon-full-stack-software-engineer.webp"],
-    },
-    alternates: {
-      canonical: `${baseUrl}/${locale}`,
-      languages: {
-        'en': `${baseUrl}/en`,
-        'pt': `${baseUrl}/pt`,
-        'es': `${baseUrl}/es`,
-      },
-    },
+    },    
   };
 }
 
@@ -111,7 +113,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={`${inter.variable} ${poppins.variable} antialiased font-sans`}>
-        
+
         {/*Google Analytics */}
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID || ''} />
         <JsonLd />
