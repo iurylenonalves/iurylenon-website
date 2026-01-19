@@ -22,7 +22,7 @@ export function HeroSection() {
                 {t('hero_title_2')}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto md:mx-0 leading-relaxed opacity-90">
               {t('subtitle')}
             </p>
             

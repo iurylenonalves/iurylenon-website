@@ -35,11 +35,11 @@ export function CookieConsent() {
       "transition-transform duration-500 ease-in-out",
       isVisible ? "translate-y-0" : "translate-y-full"
     )}>
-      <div className="mx-auto max-w-7xl bg-background/80 backdrop-blur-lg border border-border shadow-2xl rounded-xl p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
+      <div className="mx-auto max-w-7xl bg-background border border-border shadow-2xl rounded-xl p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
         
         {/* Text */}
         <div className="flex-1 text-center md:text-left">
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed ">
             {t.rich("description", {
               privacy: (chunks) => (
                 <Link 
