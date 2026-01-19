@@ -55,7 +55,9 @@ export function HeroSection() {
               width={500}
               height={500}
               className="rounded-lg w-full max-w-md lg:aspect-3/4 object-cover object-top shadow-2xl"
-              priority
+              priority={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              quality={90}
             />
           </div>
 
