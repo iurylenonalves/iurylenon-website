@@ -19,7 +19,7 @@ export function Header() {
         <div className="flex items-center justify-self-start">
           <Link href="/" aria-label="Back to Homepage">
             <Image
-              src="/images/iury-lenon-logotype.png"
+              src="/images/logotype-iurylenon-128.webp"
               alt="Iury Lenon Logo"
               width={64}
               height={64}

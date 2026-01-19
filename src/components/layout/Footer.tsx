@@ -17,7 +17,7 @@ export function Footer() {
           {/* Logo */}
           <Link href="/" aria-label="Back to Homepage">
             <Image
-              src="/images/iury-lenon-logotype-footer.png"
+              src="/images/logotype-iurylenon-footer.webp"
               alt="Iury Lenon Logo"
               width={128}
               height={128}
