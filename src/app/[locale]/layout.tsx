@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       description: t('description'),
       images: [
         {
-          url: "/images/iury-lenon-full-stack-software-engineer.webp",
+          url: "/images/Iury_Lenon_Software_Engineer.webp",
           width: 1200,
           height: 630,
           alt: t('title'),
@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       card: "summary_large_image",
       title: t('title'),
       description: t('description'),
-      images: ["/images/iury-lenon-full-stack-software-engineer.webp"],
+      images: ["/images/Iury_Lenon_Software_Engineer.webp"],
     },    
   };
 }

@@ -11,12 +11,17 @@ export function BioSection() {
         
         {/* Image */}
         <div className="flex justify-center">
-          <div className="relative w-full max-w-xs aspect-3/4 rounded-lg overflow-hidden shadow-xl">
+          <div className="relative w-full max-w-xs rounded-lg overflow-hidden shadow-xl">
             <Image
               src="/images/iury-lenon-full-stack-software-engineer.webp"
               alt="Iury Lenon - Strategic Tech Partner"
-              fill
-              className="object-cover object-top"
+              width={500} 
+              height={750}
+              className="rounded-lg w-full h-auto object-contain"
+              quality={90}
+              priority={true}
+              fetchPriority="high"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
         </div>
