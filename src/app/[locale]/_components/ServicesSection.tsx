@@ -7,6 +7,10 @@ import { useTranslations } from "next-intl";
 
 export function ServicesSection() {
   const t = useTranslations("ServicesSection");
+  const tCta = useTranslations("CtaSection");
+
+  const phoneNumber = "447926664717"; 
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(tCta('whatsapp_message'))}`;
 
   const services = [
     {
@@ -78,7 +82,9 @@ export function ServicesSection() {
             size="lg"
             className="bg-[#FFD700] text-[#000037] font-bold hover:bg-[#CCAC00]"
           >
-            <Link href="/services">{t("cta_plans")}</Link>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              {t("cta_plans")}
+            </a>
           </Button>
           <Button asChild variant="ghost" className="group text-white font-bold">
             <Link href="/contact">

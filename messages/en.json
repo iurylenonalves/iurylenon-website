@@ -51,15 +51,16 @@
     "service3_desc": "Connect your apps (CRM, Email, Slack). Automate repetitive tasks using n8n and AI, saving 20+ hours per week.",
     "service4_title": "Managed Infrastructure & Support",
     "service4_desc": "Your own private server (VPS). We manage security, backups, and updates so you can focus on your business.",
-    "cta_plans": "View Plans & Pricing",
-    "cta_started": "Get started"
+    "cta_plans": "Get a Custom Quote",
+    "cta_started": "Start Automation"
   },
   "CtaSection": {
     "title": "Stop losing time with manual tasks and slow websites",
     "description_1": "Let's build a digital infrastructure that works for you 24/7.",
     "description_2": "Book a discovery call today.",
     "cta_book": "Book a Call",
-    "cta_plans": "See Plans & Pricing"
+    "cta_plans": "Get a Custom Quote",
+    "whatsapp_message": "Hello Iury, I visited your website and I'm interested in discussing a project."
   },
   "AboutPage": {
     "Hero": {

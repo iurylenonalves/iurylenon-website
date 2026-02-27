@@ -6,6 +6,9 @@ import { useTranslations } from "next-intl";
 export function CtaSection() {
   const t = useTranslations("CtaSection");
 
+  const phoneNumber = "447926664717";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(t('whatsapp_message'))}`;
+
   return (
     <section className="bg-[#FFD700] text-[#000037]">
       <SectionWrapper className="py-20 md:py-28">
@@ -38,7 +41,9 @@ export function CtaSection() {
               variant="outline"
               className="border-[#000037] text-[#000037] font-bold hover:bg-[#000037] hover:text-white"
             >
-              <Link href="/services">{t("cta_plans")}</Link>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                {t("cta_plans")}
+              </a>
             </Button>
           </div>
         </div>

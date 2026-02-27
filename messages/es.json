@@ -51,15 +51,16 @@
     "service3_desc": "Conecte sus apps (CRM, Email, Slack). Automatice tareas manuales usando n8n e IA, ahorrando más de 20h semanales a su equipo.",
     "service4_title": "Infraestructura Gestionada (DevOps)",
     "service4_desc": "Su propio servidor privado (VPS). Yo me encargo de la seguridad, copias de seguridad y actualizaciones para que usted se enfoque en el negocio.",
-    "cta_plans": "Ver Planes y Precios",
-    "cta_started": "Iniciar Proyecto"
+    "cta_plans": "Solicitar Presupuesto",
+    "cta_started": "Iniciar Automatización"
   },
   "CtaSection": {
     "title": "Deje de perder tiempo con tareas manuales y sitios lentos",
     "description_1": "Construyamos una infraestructura digital que trabaje para usted 24/7.",
     "description_2": "Agende una reunión de diagnóstico hoy.",
     "cta_book": "Agendar Reunión",
-    "cta_plans": "Ver Planes y Precios"
+    "cta_plans": "Solicitar Presupuesto",
+    "whatsapp_message": "Hola Iury, visité su sitio web y me interesa discutir un proyecto."
   },
   "AboutPage": {
     "Hero": {
