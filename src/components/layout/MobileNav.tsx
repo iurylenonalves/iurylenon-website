@@ -34,7 +34,7 @@ export function MobileNav() {
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">                 
                  {/* If you have the logo, use the image. If not, keep the stylized text */}
                  <Image
-                    src="/images/iury-lenon-logotype.png"
+                    src="/images/logotype-iurylenon-128.webp"
                     alt="Iury Lenon"
                     width={40}
                     height={40}
