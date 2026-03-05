@@ -40,7 +40,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
       <CardHeader>
         <CardTitle className="font-heading text-2xl">{project.title}</CardTitle>
-        <CardDescription className="h-24 overflow-y-auto text-sm leading-relaxed">
+        <CardDescription className="h-32 overflow-y-auto text-sm leading-relaxed">
           {project.description}
         </CardDescription>
       </CardHeader>

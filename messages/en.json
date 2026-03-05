@@ -102,7 +102,7 @@
       "p1_title": "High-End Aesthetic Clinic Platform",
       "p1_desc": "A full-scale digital infrastructure for a premium clinic. Features a Headless CMS (Sanity) for real-time content management, a hybrid E-commerce system for selling products & treatments, and sub-second performance.",
       "p2_title": "Bruna Alves Photography Platform",
-      "p2_desc": "A feature-rich portfolio & blog system. Includes a custom Admin Dashboard for content management, Google OAuth for secure access, and a dual-language architecture (i18n). Built for high performance and SEO.",
+      "p2_desc": "A feature-rich portfolio & blog system. Includes a custom Admin Dashboard, business KPIs (revenue, bookings, package performance), dynamic payment links (Stripe), Google OAuth for secure access, and a dual-language architecture (i18n). Built for high performance and SEO.",
       "p3_title": "B2B Lead Processing System",
       "p3_desc": "An intelligent automation infrastructure. It captures leads, validates data with Zod, enriches profiles using AI Agents, and instantly notifies the sales team via Slack/WhatsApp, eliminating manual data entry."
     }

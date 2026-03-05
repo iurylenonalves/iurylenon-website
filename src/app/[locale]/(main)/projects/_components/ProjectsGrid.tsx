@@ -18,9 +18,9 @@ export function ProjectsGrid() {
       title: t("p2_title"),
       description: t("p2_desc"),
       imageUrl: "/images/home-brunaphoto.png",
-      tags: ["Next.js 16", "Tailwind v4", "Google OAuth", "Admin Dashboard", "i18n"],
+      tags: ["Next.js 16", "Tailwind v4", "Google OAuth", "Admin Dashboard", "Stripe", "i18n"],
       liveUrl: "https://brunaalvesphoto.com",
-      githubUrl: "https://github.com/iurylenonalves/brunaalvesphoto-frontend",
+      //githubUrl: "https://github.com/iurylenonalves/brunaalvesphoto-frontend",
     },
     {
       title: t("p3_title"),
@@ -28,7 +28,7 @@ export function ProjectsGrid() {
       imageUrl: "/images/Project-02.jpg",
       tags: ["n8n Automation", "AI Agents", "Resend API", "Webhook Integration", "CRM"],
       liveUrl: "/contact",
-      // githubUrl: "#", // Mantive comentado pois é código interno
+      // githubUrl: "#", //
     },
     // More projects can be added here
   ];

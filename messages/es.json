@@ -102,7 +102,7 @@
       "p1_title": "Plataforma Clínica Estética Premium",
       "p1_desc": "Infraestructura digital completa. Posee CMS Headless (Sanity) para gestión de contenido en tiempo real, E-commerce híbrido para venta de productos/tratamientos y rendimiento ultrarrápido (sub-second).",
       "p2_title": "Plataforma de Fotografía Bruna Alves",
-      "p2_desc": "Sistema de portafolio y blog completo. Incluye Panel Administrativo personalizado, Inicio de sesión seguro con Google y arquitectura internacional (i18n). Enfoque total en SEO y conversión.",
+      "p2_desc": "Sistema completo de portafolio y blog. Incluye panel de administración personalizado, KPIs del negocio (ingresos, reservas, rendimiento), enlaces de pago dinámicos (Stripe), acceso seguro con Google OAuth y arquitectura bilingüe (i18n). Construido para alto rendimiento y SEO.",
       "p3_title": "Sistema de Procesamiento de Leads B2B",
       "p3_desc": "Infraestructura de automatización inteligente. Captura leads, valida datos, enriquece perfiles usando Agentes de IA y notifica al equipo de ventas vía Slack/WhatsApp instantáneamente."
     }
