@@ -8,7 +8,7 @@
     "hero_title_1": "High-Performance Web Platforms &",
     "hero_title_2": "Business Automation",
     "subtitle": "Helping ambitious companies in the UK and worldwide to scale their digital infrastructure, reduce operational costs, and automate complex workflows.",
-    "cta_primary": "Book a Strategy Call",
+    "cta_primary": "Start Your Project",
     "cta_secondary": "View Case Studies",
     "hero_image_alt": "Iury Lenon profile picture"
   },
@@ -18,7 +18,8 @@
     "services": "Services",
     "blog": "Blog",
     "contact": "Contact",
-    "book_call": "Book a Call",
+    "book_call": "Let's Talk",
+    "whatsapp_msg": "Hi Iury! I'm reaching out from your website.",
     "toggle_menu": "Toggle Menu",
     "download": "Download",
     "share": "Share"
@@ -33,9 +34,9 @@
     "subtitle": "YOUR STRATEGIC PARTNER",
     "title": "Engineering that drives revenue and efficiency",
     "description": "I don't just write code; I build the digital foundation your business needs to grow. From custom platforms to automated workflows, I deliver solutions that you own and control.",
-    "feature1": "High-Performance Web Platforms (Next.js) designed for SEO dominance and maximum conversion",
-    "feature2": "Private Cloud Infrastructure (VPS) to ensure data privacy and cut recurring SaaS fees",
-    "feature3": "AI & Workflow Automation (n8n) to scale your operations without increasing headcount.",
+    "feature1": "High-Performance Web Platforms designed for SEO dominance and maximum conversion",
+    "feature2": "Private Cloud Infrastructure to ensure data privacy and cut recurring SaaS fees",
+    "feature3": "AI & Workflow Automation to scale your operations without increasing headcount.",
     "cta_explore": "Explore",
     "cta_contact": "Contact"
   },
@@ -58,9 +59,10 @@
     "title": "Stop losing time with manual tasks and slow websites",
     "description_1": "Let's build a digital infrastructure that works for you 24/7.",
     "description_2": "Book a discovery call today.",
-    "cta_book": "Book a Call",
+    "cta_book": "Send an Email",
     "cta_plans": "Get a Custom Quote",
-    "whatsapp_message": "Hello Iury, I visited your website and I'm interested in discussing a project."
+    "whatsapp_message": "Hello Iury, I visited your website and I'm interested in discussing a project.",
+    "hero_whatsapp_message": "Hi Iury! I saw your website and I want to start a new project."
   },
   "AboutPage": {
     "Hero": {
@@ -147,6 +149,11 @@
     "Form": {
       "title": "Get in Touch",
       "description": "I'm currently available for freelance opportunities and open to discussing new projects. Feel free to reach out directly or connect with me on social media.",
+      "fast_track_title": "Fast Response",
+      "fast_track_desc": "Skip the form and get an instant reply. Chat directly with my AI Assistant on WhatsApp to get estimates and book a call immediately.",
+      "fast_track_btn": "Chat on WhatsApp",
+      "fast_track_whatsapp_msg": "Hello Iury, I preferred to use the fast track via WhatsApp to talk about my project.",
+      "or_reach_out": "Or reach out via",
       "name_label": "Name",
       "name_placeholder": "Your name",
       "email_label": "Email",

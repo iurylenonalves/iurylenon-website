@@ -33,7 +33,7 @@ export function CtaSection() {
               size="lg"
               className="bg-[#000037] text-white font-bold hover:bg-[#00006F]"
             >
-              <Link href="/contact">{t("cta_book")}</Link>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Start via WhatsApp</a>
             </Button>
             <Button
               asChild
@@ -41,9 +41,7 @@ export function CtaSection() {
               variant="outline"
               className="border-[#000037] text-[#000037] font-bold hover:bg-[#000037] hover:text-white"
             >
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                {t("cta_plans")}
-              </a>
+              <Link href="/contact">{t("cta_book")}</Link>
             </Button>
           </div>
         </div>

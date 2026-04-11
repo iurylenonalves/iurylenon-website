@@ -7,6 +7,10 @@ import { useTranslations } from "next-intl";
 
 export function FeatureSection() {
   const t = useTranslations("FeatureSection");
+  const tCta = useTranslations('CtaSection');
+
+  const phoneNumber = "447926664717";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(tCta('hero_whatsapp_message'))}`;
 
   return (
     <section className="bg-slate-50">
@@ -64,10 +68,10 @@ export function FeatureSection() {
                 <Link href="/services">{t("cta_explore")}</Link>
               </Button>
               <Button asChild variant="ghost" className="group text-[#000037] font-bold">
-                <Link href="/contact">
-                  {t("cta_contact")}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  {t("cta_contact")} {/* No en.json pode mudar para "Chat on WhatsApp" */}
+                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </div>
           </div>

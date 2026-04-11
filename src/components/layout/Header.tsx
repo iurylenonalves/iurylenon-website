@@ -11,6 +11,9 @@ import { LanguageSwitcher } from "../ui/language-switcher";
 export function Header() {
    const t = useTranslations('Navigation');
 
+   const phoneNumber = "447926664717";
+   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(t('whatsapp_msg'))}`;
+
    return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">      
       <div className="grid h-16 w-full grid-cols-[auto_1fr_auto] items-center px-4 md:px-8 lg:px-12">
@@ -55,10 +58,10 @@ export function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-2">
-            <Button asChild className="cursor-pointer font-semibold shadow-sm">
-                <Link href="/contact">
+            <Button asChild className="cursor-pointer font-bold shadow-sm bg-[#FFD700] text-[#000037] hover:bg-[#CCAC00]">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">                    
                     {t('book_call')}
-                </Link>
+                </a>
             </Button>
           </div>
         {/* Menu Mobile */}

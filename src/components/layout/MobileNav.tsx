@@ -18,6 +18,9 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations('Navigation');
 
+  const phoneNumber = "447926664717";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(t('whatsapp_msg'))}`;
+
   return (    
     <div className="md:hidden">
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -44,6 +47,29 @@ export function MobileNav() {
               </Link>
             </SheetTitle>
           </SheetHeader>
+
+          {/* Section: Language & CTA */}
+          <div className="flex flex-col gap-5 py-6 border-b border-border">
+            {/* Language Switcher */}
+            <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground font-medium">
+                    Language / Idioma:
+                </span>
+                <LanguageSwitcher />
+            </div>
+
+            {/* CTA Button */}
+            <Button asChild className="w-full bg-[#FFD700] text-[#000037] hover:bg-[#CCAC00] font-bold text-md h-12 shadow-md">
+                <a 
+                  href={whatsappUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  onClick={() => setIsOpen(false)}
+                >
+                    {t('book_call')}
+                </a>
+            </Button>
+          </div>
 
           {/* Navigation Links */}
           <div className="flex flex-col gap-6 py-8 text-lg font-medium">
@@ -82,26 +108,7 @@ export function MobileNav() {
             >
               {t('contact')}
             </Link>
-          </div>
-
-          {/* Footer Section: Language & CTA */}
-          <div className="mt-auto flex flex-col gap-6">
-            
-            {/* Language Switcher with separator */}
-            <div className="flex items-center justify-between border-t border-border pt-4">
-                <span className="text-sm text-muted-foreground font-medium">
-                    Language / Idioma:
-                </span>
-                <LanguageSwitcher />
-            </div>
-
-            {/* CTA Button */}
-            <Button asChild className="w-full font-bold text-md h-12 shadow-md">
-                <Link href="/contact" onClick={() => setIsOpen(false)}>
-                    {t('book_call')}
-                </Link>
-            </Button>
-          </div>
+          </div>          
 
         </SheetContent>
       </Sheet>

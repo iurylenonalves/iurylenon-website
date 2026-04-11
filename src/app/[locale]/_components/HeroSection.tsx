@@ -6,6 +6,10 @@ import { useTranslations } from 'next-intl';
 
 export function HeroSection() {
   const t = useTranslations('HomePage');
+  const tCta = useTranslations('CtaSection');
+
+  const phoneNumber = "447926664717";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(tCta('hero_whatsapp_message'))}`;
 
   return (
     <section className="bg-[#000037] text-white">
@@ -34,7 +38,9 @@ export function HeroSection() {
                 variant="outline"
                 className="bg-[#FFD700] text-[#000037] font-bold hover:bg-[#CCAC00]"
               >
-                <Link href="/contact">{t('cta_primary')}</Link>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  {t('cta_primary')}
+                </a>
               </Button>
               <Button
                 asChild

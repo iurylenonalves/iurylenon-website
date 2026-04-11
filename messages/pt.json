@@ -8,7 +8,7 @@
     "hero_title_1": "Plataformas Web de Alta Performance &",
     "hero_title_2": "Automação de Negócios",
     "subtitle": "Ajudando empresas ambiciosas no Reino Unido, Brasil e Europa a escalar sua infraestrutura digital, reduzir custos operacionais e automatizar fluxos de trabalho complexos.",
-    "cta_primary": "Agendar Sessão Estratégica",
+    "cta_primary": "Iniciar Projeto",
     "cta_secondary": "Ver Estudos de Caso",
     "hero_image_alt": "Foto de perfil de Iury Lenon"
   },
@@ -18,7 +18,8 @@
     "services": "Serviços",
     "blog": "Blog",
     "contact": "Contato",
-    "book_call": "Agendar Reunião",
+    "book_call": "Vamos Conversar",
+    "whatsapp_msg": "Olá Iury! Estou entrando em contato pelo seu site.",
     "toggle_menu": "Abrir Menu",
     "download": "Baixar",
     "share": "Compartilhar"
@@ -33,9 +34,9 @@
     "subtitle": "SEU PARCEIRO ESTRATÉGICO",
     "title": "Engenharia que gera Faturamento e Eficiência",
     "description": "Não entrego apenas código; construo a fundação digital que seu negócio precisa para crescer. De plataformas personalizadas a automações complexas, entrego soluções que você domina e controla.",
-    "feature1": "Plataformas Web de Alta Performance (Next.js) projetadas para dominar o SEO e maximizar conversão.",
-    "feature2": "Infraestrutura de Nuvem Privada (VPS) para garantir soberania de dados e eliminar taxas de SaaS.",
-    "feature3": "IA e Automação de Fluxos (n8n) para escalar sua operação sem aumentar o número de funcionários.",
+    "feature1": "Plataformas Web de Alta Performance projetadas para dominar o SEO e maximizar conversão.",
+    "feature2": "Infraestrutura de Nuvem Privada para garantir soberania de dados e eliminar taxas de SaaS.",
+    "feature3": "IA e Automação de Fluxos para escalar sua operação sem aumentar o número de funcionários.",
     "cta_explore": "Explorar Soluções",
     "cta_contact": "Entrar em Contato"
   },
@@ -58,9 +59,10 @@
     "title": "Pare de perder tempo com tarefas manuais e sites lentos",
     "description_1": "Vamos construir uma infraestrutura digital que trabalha para você 24/7.",
     "description_2": "Agende uma reunião de diagnóstico hoje.",
-    "cta_book": "Agendar Reunião",
+    "cta_book": "Enviar um E-mail",
     "cta_plans": "Solicitar Orçamento",
-    "whatsapp_message": "Olá Iury, visitei seu site e tenho interesse em discutir um projeto."
+    "whatsapp_message": "Olá Iury, visitei seu site e tenho interesse em discutir um projeto.",
+    "hero_whatsapp_message": "Oi Iury! Vi seu site e quero iniciar um novo projeto."
   },
   "AboutPage": {
     "Hero": {
@@ -147,6 +149,11 @@
     "Form": {
       "title": "Fale Comigo",
       "description": "Estou disponível para novos projetos e consultorias. Preencha o formulário abaixo para agendarmos uma conversa.",
+      "fast_track_title": "Resposta Rápida",
+      "fast_track_desc": "Pule o formulário e receba uma resposta instantânea. Converse diretamente com meu Assistente de IA no WhatsApp para orçamentos e agendamentos imediatos.",
+      "fast_track_btn": "Chamar no WhatsApp",
+      "fast_track_whatsapp_msg": "Olá Iury, preferi usar o atalho do WhatsApp para falar sobre o meu projeto.",
+      "or_reach_out": "Ou entre em contato via",
       "name_label": "Nome",
       "name_placeholder": "Seu nome completo",
       "email_label": "E-mail Corporativo",
