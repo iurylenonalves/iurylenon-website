@@ -11,9 +11,13 @@ jest.mock('resend', () => ({
   })),
 }));
 
-const { DELETE, GET, POST, PUT } = require('@/app/api/send/route');
-
 type RequestLike = Pick<NextRequest, 'headers' | 'json'>;
+type RouteModule = typeof import('@/app/api/send/route');
+
+let DELETE: RouteModule['DELETE'];
+let GET: RouteModule['GET'];
+let POST: RouteModule['POST'];
+let PUT: RouteModule['PUT'];
 
 function createPostRequest(
   body: unknown,
@@ -30,6 +34,14 @@ function toNextRequest(request: RequestLike): NextRequest {
 }
 
 describe('api/send route', () => {
+  beforeAll(async () => {
+    const routeModule = await import('@/app/api/send/route');
+    DELETE = routeModule.DELETE;
+    GET = routeModule.GET;
+    POST = routeModule.POST;
+    PUT = routeModule.PUT;
+  });
+
   beforeEach(() => {
     mockSend.mockReset();
     clearRateLimitStore();
@@ -190,6 +202,41 @@ describe('api/send route', () => {
           },
           { 'x-forwarded-for': ip }
         )
+      )
+    );
+
+    const body = await blockedResponse.json();
+
+    expect(blockedResponse.status).toBe(429);
+    expect(body.error).toBe('Too many requests. Please try again later.');
+  });
+
+  it('rate-limits repeated requests with missing IP headers (unknown fallback)', async () => {
+    mockSend.mockResolvedValue({ error: null });
+
+    for (let index = 0; index < 5; index++) {
+      const allowedResponse = await POST(
+        toNextRequest(
+          createPostRequest({
+            name: 'Ana Silva',
+            email: 'ana@example.com',
+            service: 'automation',
+            message: 'I need support with automation for my lead flow.',
+          })
+        )
+      );
+
+      expect(allowedResponse.status).toBe(200);
+    }
+
+    const blockedResponse = await POST(
+      toNextRequest(
+        createPostRequest({
+          name: 'Ana Silva',
+          email: 'ana@example.com',
+          service: 'automation',
+          message: 'I need support with automation for my lead flow.',
+        })
       )
     );
 
