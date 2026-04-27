@@ -8,6 +8,10 @@ interface RateLimitEntry {
 
 const rateLimitMap = new Map<string, RateLimitEntry>();
 
+export function clearRateLimitStore(): void {
+  rateLimitMap.clear();
+}
+
 // Clean up old entries every hour
 const cleanupInterval = setInterval(() => {
   const now = Date.now();

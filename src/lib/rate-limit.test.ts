@@ -1,6 +1,10 @@
-import { rateLimit } from '@/lib/rate-limit';
+import { clearRateLimitStore, rateLimit } from '@/lib/rate-limit';
 
 describe('rateLimit', () => {
+  beforeEach(() => {
+    clearRateLimitStore();
+  });
+
   it('allows requests until limit and blocks after limit', () => {
     const id = 'ip-limit-test-1';
 

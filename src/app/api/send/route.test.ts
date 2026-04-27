@@ -1,4 +1,7 @@
-var mockSend = jest.fn();
+import type { NextRequest } from 'next/server';
+import { clearRateLimitStore } from '@/lib/rate-limit';
+
+var mockSend: jest.Mock = jest.fn();
 
 jest.mock('resend', () => ({
   Resend: jest.fn().mockImplementation(() => ({
@@ -10,34 +13,43 @@ jest.mock('resend', () => ({
 
 const { DELETE, GET, POST, PUT } = require('@/app/api/send/route');
 
+type RequestLike = Pick<NextRequest, 'headers' | 'json'>;
+
 function createPostRequest(
   body: unknown,
   headers: Record<string, string> = {}
-): { headers: Headers; json: () => Promise<unknown> } {
+): RequestLike {
   return {
     headers: new Headers(headers),
     json: async () => body,
   };
 }
 
+function toNextRequest(request: RequestLike): NextRequest {
+  return request as NextRequest;
+}
+
 describe('api/send route', () => {
   beforeEach(() => {
     mockSend.mockReset();
+    clearRateLimitStore();
   });
 
   it('returns 200 and sends email for valid payload', async () => {
     mockSend.mockResolvedValue({ error: null });
 
     const response = await POST(
-      createPostRequest(
-        {
-          name: 'Ana Silva',
-          email: 'ana@example.com',
-          service: 'automation',
-          message: 'I need support with automation for my lead flow.',
-        },
-        { 'x-forwarded-for': `200.10.10.${Date.now() % 255}` }
-      ) as never
+      toNextRequest(
+        createPostRequest(
+          {
+            name: 'Ana Silva',
+            email: 'ana@example.com',
+            service: 'automation',
+            message: 'I need support with automation for my lead flow.',
+          },
+          { 'x-forwarded-for': `200.10.10.${Date.now() % 255}` }
+        )
+      )
     );
 
     const body = await response.json();
@@ -58,12 +70,14 @@ describe('api/send route', () => {
     mockSend.mockResolvedValue({ error: null });
 
     const response = await POST(
-      createPostRequest({
-        name: 'Ana Silva',
-        email: 'ana@example.com',
-        service: 'automation',
-        message: 'I need support with automation for my lead flow.',
-      }) as never
+      toNextRequest(
+        createPostRequest({
+          name: 'Ana Silva',
+          email: 'ana@example.com',
+          service: 'automation',
+          message: 'I need support with automation for my lead flow.',
+        })
+      )
     );
 
     expect(response.status).toBe(200);
@@ -78,15 +92,17 @@ describe('api/send route', () => {
     mockSend.mockResolvedValue({ error: null });
 
     const response = await POST(
-      createPostRequest(
-        {
-          name: 'Ana Silva',
-          email: 'ana@example.com',
-          service: 'automation',
-          message: 'I need support with automation for my lead flow.',
-        },
-        { 'x-forwarded-for': '210.10.10.1, 10.0.0.1, 10.0.0.2' }
-      ) as never
+      toNextRequest(
+        createPostRequest(
+          {
+            name: 'Ana Silva',
+            email: 'ana@example.com',
+            service: 'automation',
+            message: 'I need support with automation for my lead flow.',
+          },
+          { 'x-forwarded-for': '210.10.10.1, 10.0.0.1, 10.0.0.2' }
+        )
+      )
     );
 
     expect(response.status).toBe(200);
@@ -99,15 +115,17 @@ describe('api/send route', () => {
 
   it('returns 400 for validation errors with field details', async () => {
     const response = await POST(
-      createPostRequest(
-        {
-          name: '1',
-          email: 'bad-email',
-          service: 'invalid',
-          message: 'short',
-        },
-        { 'x-forwarded-for': `201.10.10.${Date.now() % 255}` }
-      ) as never
+      toNextRequest(
+        createPostRequest(
+          {
+            name: '1',
+            email: 'bad-email',
+            service: 'invalid',
+            message: 'short',
+          },
+          { 'x-forwarded-for': `201.10.10.${Date.now() % 255}` }
+        )
+      )
     );
 
     const body = await response.json();
@@ -127,12 +145,12 @@ describe('api/send route', () => {
 
   it('returns 400 when JSON parsing fails', async () => {
     const response = await POST(
-      {
+      toNextRequest({
         headers: new Headers({ 'x-forwarded-for': `202.10.10.${Date.now() % 255}` }),
         json: async () => {
           throw new SyntaxError('Unexpected token');
         },
-      } as never
+      })
     );
 
     expect(response.status).toBe(400);
@@ -145,6 +163,24 @@ describe('api/send route', () => {
 
     for (let index = 0; index < 5; index++) {
       const allowedResponse = await POST(
+        toNextRequest(
+          createPostRequest(
+            {
+              name: 'Ana Silva',
+              email: 'ana@example.com',
+              service: 'automation',
+              message: 'I need support with automation for my lead flow.',
+            },
+            { 'x-forwarded-for': ip }
+          )
+        )
+      );
+
+      expect(allowedResponse.status).toBe(200);
+    }
+
+    const blockedResponse = await POST(
+      toNextRequest(
         createPostRequest(
           {
             name: 'Ana Silva',
@@ -153,22 +189,8 @@ describe('api/send route', () => {
             message: 'I need support with automation for my lead flow.',
           },
           { 'x-forwarded-for': ip }
-        ) as never
-      );
-
-      expect(allowedResponse.status).toBe(200);
-    }
-
-    const blockedResponse = await POST(
-      createPostRequest(
-        {
-          name: 'Ana Silva',
-          email: 'ana@example.com',
-          service: 'automation',
-          message: 'I need support with automation for my lead flow.',
-        },
-        { 'x-forwarded-for': ip }
-      ) as never
+        )
+      )
     );
 
     const body = await blockedResponse.json();
@@ -181,15 +203,17 @@ describe('api/send route', () => {
     mockSend.mockResolvedValue({ error: { message: 'resend-down' } });
 
     const response = await POST(
-      createPostRequest(
-        {
-          name: 'Ana Silva',
-          email: 'ana@example.com',
-          service: 'automation',
-          message: 'I need support with automation for my lead flow.',
-        },
-        { 'x-forwarded-for': `204.10.10.${Date.now() % 255}` }
-      ) as never
+      toNextRequest(
+        createPostRequest(
+          {
+            name: 'Ana Silva',
+            email: 'ana@example.com',
+            service: 'automation',
+            message: 'I need support with automation for my lead flow.',
+          },
+          { 'x-forwarded-for': `204.10.10.${Date.now() % 255}` }
+        )
+      )
     );
 
     expect(response.status).toBe(500);
