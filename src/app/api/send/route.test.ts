@@ -45,6 +45,56 @@ describe('api/send route', () => {
     expect(response.status).toBe(200);
     expect(body).toEqual({ message: 'Email sent successfully!' });
     expect(mockSend).toHaveBeenCalledTimes(1);
+    expect(mockSend).toHaveBeenCalledWith(
+      expect.objectContaining({
+        to: ['contact@iurylenon.com'],
+        replyTo: 'ana@example.com',
+        subject: expect.stringContaining('Ana Silva'),
+      })
+    );
+  });
+
+  it('handles missing IP headers using fallback value', async () => {
+    mockSend.mockResolvedValue({ error: null });
+
+    const response = await POST(
+      createPostRequest({
+        name: 'Ana Silva',
+        email: 'ana@example.com',
+        service: 'automation',
+        message: 'I need support with automation for my lead flow.',
+      }) as never
+    );
+
+    expect(response.status).toBe(200);
+    expect(mockSend).toHaveBeenCalledWith(
+      expect.objectContaining({
+        html: expect.stringContaining('Security: Sent from IP unknown'),
+      })
+    );
+  });
+
+  it('uses the first IP when x-forwarded-for has multiple addresses', async () => {
+    mockSend.mockResolvedValue({ error: null });
+
+    const response = await POST(
+      createPostRequest(
+        {
+          name: 'Ana Silva',
+          email: 'ana@example.com',
+          service: 'automation',
+          message: 'I need support with automation for my lead flow.',
+        },
+        { 'x-forwarded-for': '210.10.10.1, 10.0.0.1, 10.0.0.2' }
+      ) as never
+    );
+
+    expect(response.status).toBe(200);
+    expect(mockSend).toHaveBeenCalledWith(
+      expect.objectContaining({
+        html: expect.stringContaining('Security: Sent from IP 210.10.10.1'),
+      })
+    );
   });
 
   it('returns 400 for validation errors with field details', async () => {

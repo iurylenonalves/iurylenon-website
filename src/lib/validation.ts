@@ -34,7 +34,12 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 // Function to sanitize HTML and prevent XSS
 export function sanitizeInput(input: string): string {
-  return input
+  // Decode common encoded angle brackets before stripping tags/patterns.
+  const decoded = input
+    .replace(/(&lt;|&#x3c;|&#60;)/gi, '<')
+    .replace(/(&gt;|&#x3e;|&#62;)/gi, '>');
+
+  return decoded
     .replace(/[<>]/g, '') // Remove < e >
     .replace(/javascript:/gi, '') // Remove javascript:
     .replace(/on\w+\s*=/gi, '') // Remove event handlers

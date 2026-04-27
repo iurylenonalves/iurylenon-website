@@ -2,7 +2,7 @@ import { rateLimit } from '@/lib/rate-limit';
 
 describe('rateLimit', () => {
   it('allows requests until limit and blocks after limit', () => {
-    const id = `ip-limit-${Date.now()}`;
+    const id = 'ip-limit-test-1';
 
     const first = rateLimit(id, 2, 1000);
     const second = rateLimit(id, 2, 1000);
@@ -16,8 +16,8 @@ describe('rateLimit', () => {
   });
 
   it('tracks identifiers independently', () => {
-    const idA = `ip-a-${Date.now()}`;
-    const idB = `ip-b-${Date.now()}`;
+    const idA = 'ip-a-test-1';
+    const idB = 'ip-b-test-1';
 
     rateLimit(idA, 1, 5000);
     const blockedA = rateLimit(idA, 1, 5000);
@@ -28,7 +28,7 @@ describe('rateLimit', () => {
   });
 
   it('resets after window expires', () => {
-    const id = `ip-reset-${Date.now()}`;
+    const id = 'ip-reset-test-1';
     const nowSpy = jest.spyOn(Date, 'now');
 
     nowSpy.mockReturnValue(1_000);
@@ -43,7 +43,20 @@ describe('rateLimit', () => {
     expect(first.success).toBe(true);
     expect(blocked.success).toBe(false);
     expect(afterReset.success).toBe(true);
+    expect(afterReset.remaining).toBe(0);
 
     nowSpy.mockRestore();
+  });
+
+  it('blocks immediately when limit is zero', () => {
+    const result = rateLimit('ip-zero-limit-test', 0, 1000);
+    expect(result.success).toBe(false);
+    expect(result.remaining).toBe(0);
+  });
+
+  it('blocks immediately when limit is negative', () => {
+    const result = rateLimit('ip-negative-limit-test', -1, 1000);
+    expect(result.success).toBe(false);
+    expect(result.remaining).toBe(0);
   });
 });

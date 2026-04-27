@@ -29,6 +29,11 @@ export function rateLimit(
   windowMs: number = 15 * 60 * 1000 // 15 minutes
 ): { success: boolean; remaining: number; resetTime: number } {
   const now = Date.now();
+
+  if (limit <= 0) {
+    return { success: false, remaining: 0, resetTime: now + windowMs };
+  }
+
   const entry = rateLimitMap.get(identifier);
 
   if (!entry || now > entry.resetTime) {

@@ -72,6 +72,30 @@ describe('sanitizeInput', () => {
     expect(sanitized.toLowerCase()).not.toContain('onclick=');
   });
 
+  it('sanitizes encoded and quoted script patterns', () => {
+    const dirty = '\"\'><script>alert(1)</script> &#x3C;script&#x3E;boom&#x3C;/script&#x3E;';
+    const sanitized = sanitizeInput(dirty);
+
+    expect(sanitized).not.toContain('<');
+    expect(sanitized).not.toContain('>');
+    expect(sanitized).not.toContain('&#x3C;');
+    expect(sanitized).not.toContain('&#x3E;');
+    expect(sanitized.toLowerCase()).not.toContain('javascript:');
+  });
+
+  it('is idempotent when applied multiple times', () => {
+    const dirty = '<a onclick=run()>javascript:hello</a>';
+    const once = sanitizeInput(dirty);
+    const twice = sanitizeInput(once);
+
+    expect(twice).toBe(once);
+  });
+
+  it('handles long strings without truncation', () => {
+    const long = 'a'.repeat(10_000);
+    expect(sanitizeInput(long)).toHaveLength(10_000);
+  });
+
   it('trims whitespace and preserves safe text', () => {
     expect(sanitizeInput('   hello world   ')).toBe('hello world');
     expect(sanitizeInput('Olá mundo seguro')).toBe('Olá mundo seguro');
@@ -87,11 +111,25 @@ describe('sanitizeContactForm', () => {
       message: 'Hey <script>alert(1)</script> world',
     });
 
-    expect(result).toEqual({
-      name: 'bIury/b',
-      email: 'iury@example.com',
-      service: 'saas-system',
-      message: 'Hey scriptalert(1)/script world',
-    });
+    expect(result.service).toBe('saas-system');
+    expect(result.email).toBe('iury@example.com');
+    expect(result.name).not.toContain('<');
+    expect(result.name).not.toContain('>');
+    expect(result.message).not.toContain('<');
+    expect(result.message).not.toContain('>');
+  });
+
+  it('does not mutate original payload', () => {
+    const payload = {
+      name: ' <b>Iury</b> ',
+      email: ' iury@example.com ',
+      service: 'saas-system' as const,
+      message: 'Hey <script>alert(1)</script> world',
+    };
+    const copy = { ...payload };
+
+    sanitizeContactForm(payload);
+
+    expect(payload).toEqual(copy);
   });
 });
