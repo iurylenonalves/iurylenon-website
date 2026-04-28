@@ -46,6 +46,16 @@ interface NavigationPost {
   publishedAt: string;
 }
 
+interface TranslationMetadataResult {
+  translations?: Array<{
+    _key: string;
+    value?: {
+      slug?: string;
+      language?: string;
+    };
+  }>;
+}
+
 async function getTranslatedPaths(postId: string): Promise<Record<string, string>> {
   const query = `*[_type == "translation.metadata" && references($postId)][0] {
     translations[] {
@@ -57,11 +67,15 @@ async function getTranslatedPaths(postId: string): Promise<Record<string, string
     }
   }`;
   
-  const result = await clientWithToken.fetch(query, { postId }, { cache: 'no-store' });
+  const result: TranslationMetadataResult = await clientWithToken.fetch(
+    query,
+    { postId },
+    { cache: 'no-store' }
+  );
   
   const paths: Record<string, string> = {};
   if (result?.translations) {
-    result.translations.forEach((t: any) => {
+    result.translations.forEach((t) => {
       if (t.value && t.value.slug) {
         paths[t._key] = `/blog/${t.value.slug}`;
       }

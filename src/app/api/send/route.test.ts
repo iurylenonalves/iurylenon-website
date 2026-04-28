@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server';
 import { clearRateLimitStore } from '@/lib/rate-limit';
 
-var mockSend: jest.Mock = jest.fn();
+const mockSend: jest.Mock = jest.fn();
 
 jest.mock('resend', () => ({
   Resend: jest.fn().mockImplementation(() => ({
