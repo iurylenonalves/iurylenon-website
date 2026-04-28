@@ -10,16 +10,16 @@ import { useTranslations } from "next-intl";
 export function CookieConsent() {
   const t = useTranslations("CookieConsent");
   const [isVisible, setIsVisible] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    
-    const consent = localStorage.getItem("cookie-consent");
-    if (!consent) {
-      
-      setTimeout(() => setIsVisible(true), 1000);
-    }
+    const timeoutId = window.setTimeout(() => {
+      const consent = localStorage.getItem("cookie-consent");
+      if (!consent) {
+        setIsVisible(true);
+      }
+    }, 1000);
+
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   const acceptCookies = () => {
@@ -27,7 +27,7 @@ export function CookieConsent() {
     setIsVisible(false);
   };
 
-  if (!mounted || !isVisible) return null;
+  if (!isVisible) return null;
 
   return (
     <div className={cn(

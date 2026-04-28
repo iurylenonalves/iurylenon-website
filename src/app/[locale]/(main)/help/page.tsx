@@ -1,4 +1,5 @@
 import { Link } from '@/i18n/navigation';
+import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
@@ -133,12 +134,12 @@ export default function HelpPage() {
                   <div className="font-semibold">{t('exit_preview')}</div>
                   <div className="text-sm text-gray-600">{t('exit_preview_desc')}</div>
                 </div>
-                <a 
+                <NextLink
                   href="/api/disable-draft"
                   className="bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200 transition-colors"
                 >
                   {t('click_here')}
-                </a>
+                </NextLink>
               </div>
             </div>
           </section>
